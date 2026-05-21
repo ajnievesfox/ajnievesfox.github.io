@@ -1,0 +1,1104 @@
+<!DOCTYPE html><html data-allow-html-edits="false" data-editing-model="html-first-markdown-blocks" data-report-text-only="true" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta content="dark" name="color-scheme">
+<title>FOX One SEO | AI Search Alignment (v2)</title>
+<link href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css" rel="stylesheet">
+<link href="https://unpkg.com/@phosphor-icons/web@2.1.2/src/regular/style.css" rel="stylesheet">
+<style>
+  @font-face { font-family: 'FOX ONE Aero'; src: local('FOX ONE Aero Light'), local('Fox One Aero Light'); font-weight: 300; font-style: normal; }
+  @font-face { font-family: 'FOX ONE Aero'; src: local('FOX ONE Aero Regular'), local('Fox One Aero Regular'); font-weight: 400; font-style: normal; }
+  @font-face { font-family: 'FOX ONE Aero'; src: local('FOX ONE Aero Medium'), local('Fox One Aero Medium'); font-weight: 500; font-style: normal; }
+  @font-face { font-family: 'FOX ONE Aero'; src: local('FOX ONE Aero Bold'), local('Fox One Aero Bold'); font-weight: 700; font-style: normal; }
+  @font-face { font-family: 'FOX ONE Aero'; src: local('FOX ONE Aero Black'), local('Fox One Aero Black'); font-weight: 800; font-style: normal; }
+
+  :root {
+    --fx-white: #ffffff;
+    --fx-black: #000000;
+    --fx-ink-1: #0b0b0b;
+    --fx-ink-2: #1a1a1a;
+    --fx-ink-3: #212121;
+    --fx-ink-4: #333333;
+    --fx-ink-5: #484849;
+    --fx-gray-1: #636364;
+    --fx-gray-2: #6a6a6a;
+    --fx-gray-3: #7f7f7f;
+    --fx-gray-5: #969696;
+    --fx-gray-6: #b2b2b2;
+    --fx-gray-7: #d9d9d9;
+    --fx-gray-8: #bac0ca;
+    --fx-red-1: #ef0033;
+    --fx-red-2: #ff0000;
+    --fx-red-3: #ff5e5b;
+    --fx-orange: #ff5e00;
+    --fx-yellow: #fbbf24;
+    --fx-purple-1: #9747ff;
+    --fx-green-1: #03a775;
+    --fx-blue-ink: #151b26;
+    --fx-blue-accent: #4285f4;
+    --fx-ms-blue: #00a4ef;
+    --fx-scrim-65: rgba(0,0,0,0.65);
+    --fx-scrim-75: rgba(0,0,0,0.75);
+    --fx-glass-light: rgba(255,255,255,0.10);
+    --fx-glass-light-2: rgba(255,255,255,0.18);
+
+    --bg: var(--fx-black);
+    --bg-elevated-1: var(--fx-ink-2);
+    --bg-elevated-2: var(--fx-ink-3);
+    --bg-input: var(--fx-ink-3);
+    --bg-overlay: var(--fx-scrim-75);
+    --fg-primary: var(--fx-white);
+    --fg-secondary: var(--fx-gray-7);
+    --fg-tertiary: var(--fx-gray-5);
+    --fg-quaternary: var(--fx-gray-2);
+    --fg-disabled: var(--fx-ink-5);
+    --fg-on-brand: var(--fx-white);
+    --fg-inverse: var(--fx-black);
+    --stroke-hairline: rgba(255,255,255,0.08);
+    --stroke-default: rgba(255,255,255,0.12);
+    --stroke-strong: rgba(255,255,255,0.20);
+    --brand-red: var(--fx-red-1);
+    --brand-red-hot: var(--fx-red-2);
+    --status-live: var(--fx-red-2);
+    --status-news: var(--fx-orange);
+    --status-positive: var(--fx-green-1);
+    --status-info: var(--fx-purple-1);
+    --focus-ring: 0 0 0 2px var(--fx-black), 0 0 0 4px var(--fx-white);
+
+    --font-sans: 'FOX ONE Aero', 'Aptos', system-ui, sans-serif;
+    --font-display: 'FOX ONE Aero', 'Aptos Display', system-ui, sans-serif;
+    --font-mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+    --radius-xs: 4px;
+    --radius-sm: 6px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+    --radius-pill: 999px;
+    --shadow-glow-red: 0 0 24px rgba(239,0,51,0.35);
+    --shadow-glow-green: 0 0 24px rgba(3,167,117,0.35);
+    --duration-instant: 80ms;
+    --duration-fast: 140ms;
+    --duration-normal: 220ms;
+    --ease-out: cubic-bezier(0.20, 0.80, 0.20, 1.00);
+
+    --fw-display: 600;
+    --fw-heading: 500;
+    --fw-label: 500;
+    --fw-emphasis: 500;
+    --fw-meta: 500;
+
+    /* Compatibility for inline values preserved from the source document. */
+    --brand: var(--brand-red);
+    --brand-700: var(--brand-red);
+    --grey-300: var(--fx-gray-3);
+    --grey-400: var(--fx-gray-5);
+    --grey-600: var(--fx-gray-3);
+    --fox-dark-blue: var(--fg-primary);
+    --green-700: var(--status-positive);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { color-scheme: dark; background: var(--bg); }
+  body {
+    min-height: 100vh;
+    font-family: var(--font-sans);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.3;
+    color: var(--fg-primary);
+    background: var(--bg);
+    overflow-x: hidden;
+  }
+  strong, b { font-weight: var(--fw-emphasis); }
+  h1, h2, h3 { font-weight: var(--fw-heading); }
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -2;
+    background:
+      linear-gradient(180deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.88) 38%, #000 100%),
+      radial-gradient(circle at 18% 4%, rgba(239,0,51,0.30), transparent 34%),
+      radial-gradient(circle at 82% 0%, rgba(151,71,255,0.16), transparent 32%),
+      linear-gradient(110deg, #090909 0%, #000 48%, #110006 100%);
+  }
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.16;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size: 72px 72px;
+    mask-image: linear-gradient(180deg, #000 0%, transparent 68%);
+  }
+
+  a { color: var(--fg-primary); text-decoration-color: var(--brand-red); text-underline-offset: 3px; }
+  a:hover { color: var(--fx-red-3); }
+  .page-meta a,
+  .callout p a,
+  .insight-card p a,
+  .fox-cell a {
+    padding-inline: 0.12em;
+    margin-inline: 0.06em;
+  }
+  :focus-visible { outline: none; box-shadow: var(--focus-ring); }
+
+  .header {
+    width: 100%;
+    padding: 24px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    background: #000;
+  }
+  .header-brand { display: inline-flex; align-items: center; }
+  .header-brand::after {
+    content: none;
+    letter-spacing: 0.06em;
+  }
+  .brand-logo { display: block; flex-shrink: 0; object-fit: contain; }
+  .brand-logo--on-dark { filter: brightness(0) invert(1); }
+  .brand-logo--fox-header { height: 20px; width: auto; }
+  .brand-logo--sm { height: 14px; width: auto; }
+  .page {
+    width: min(1120px, calc(100vw - 96px));
+    margin: 0 auto;
+    padding: 48px 48px 80px;
+  }
+  .page-title {
+    max-width: 980px;
+    margin: 0 auto 18px;
+    text-align: center;
+    color: var(--fg-primary);
+    font-family: var(--font-display);
+    font-size: clamp(42px, 7vw, 82px);
+    font-weight: var(--fw-display);
+    line-height: 0.98;
+    letter-spacing: -0.035em;
+  }
+  .page-meta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    width: 100%;
+    margin-bottom: 28px;
+    color: var(--fg-tertiary);
+    font-size: 12px;
+    font-weight: var(--fw-heading);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .page-meta i { font-size: 14px; color: var(--brand-red); }
+  .page-meta a { color: var(--fg-primary); }
+
+  .callout {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 32px;
+    padding: 18px 20px;
+    border: 0;
+    border-radius: var(--radius-lg);
+    background: var(--bg-elevated-1);
+    color: var(--fg-secondary);
+    overflow: hidden;
+  }
+  .callout > i {
+    flex: 0 0 auto;
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    border-radius: var(--radius-pill);
+    background: var(--brand-red);
+    color: var(--fg-on-brand);
+    font-size: 18px;
+    box-shadow: var(--shadow-glow-red);
+  }
+  .callout p { max-width: 880px; margin: 0; color: inherit; font-size: 15px; line-height: 1.5; }
+  .callout strong { color: var(--fg-primary); }
+  .callout a { color: var(--fg-primary); }
+  .callout--intro {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 24px 30px 28px;
+    border-radius: var(--radius-xl);
+    background:
+      linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.92) 100%),
+      linear-gradient(135deg, rgba(239,0,51,0.42) 0%, rgba(151,71,255,0.18) 44%, rgba(26,26,26,0.96) 100%);
+  }
+  .callout--intro::before {
+    content: "SEO";
+    position: static;
+    flex: 0 0 auto;
+    padding: 5px 8px;
+    border-radius: 3px;
+    background: var(--status-live);
+    color: var(--fg-on-brand);
+    font-size: 10px;
+    font-weight: var(--fw-heading);
+    letter-spacing: 0.06em;
+    line-height: 1;
+  }
+  .callout--intro > i { display: none; }
+  .callout--intro p {
+    position: relative;
+    z-index: 1;
+    max-width: none;
+    margin: 0;
+    font-size: 17px;
+    line-height: 1.5;
+    color: var(--fg-secondary);
+  }
+
+  .align-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow: hidden;
+    border: 0;
+    border-radius: var(--radius-lg);
+    background: var(--bg-elevated-1);
+  }
+  .align-table thead th {
+    padding: 14px 18px;
+    background: var(--fx-ink-1);
+    border-bottom: 1px solid var(--stroke-default);
+    color: var(--fg-primary);
+    font-size: 13px;
+    font-weight: var(--fw-heading);
+    letter-spacing: 0.06em;
+    line-height: 1.15;
+    text-align: left;
+    text-transform: uppercase;
+  }
+  .align-table thead th:first-child { width: 50%; }
+  .align-table thead th:last-child { width: 50%; }
+  .th-brand { display: inline-flex; align-items: center; gap: 8px; color: var(--fg-primary); }
+  .align-table thead th:last-child .brand-logo { filter: brightness(0) invert(1); }
+  .align-table tbody tr { transition: background var(--duration-fast) var(--ease-out); }
+  .align-table tbody tr:hover { background: rgba(255,255,255,0.04); }
+  .align-table tbody td {
+    padding: 18px;
+    border-bottom: 1px solid var(--stroke-hairline);
+    vertical-align: top;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  .align-table tbody tr:last-child td { border-bottom: 0; }
+  .rec-cell { display: flex; align-items: flex-start; gap: 12px; color: var(--fg-secondary); }
+  .rec-icon {
+    flex: 0 0 auto;
+    display: grid;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    margin-top: 1px;
+    border-radius: var(--radius-md);
+    background: var(--bg-elevated-2);
+    color: var(--fx-blue-accent);
+    font-size: 18px;
+  }
+  .rec-title {
+    margin-bottom: 6px;
+    color: var(--fg-primary);
+    font-size: 15px;
+    font-weight: var(--fw-heading);
+    line-height: 1.15;
+  }
+  .rec-quote {
+    display: flex;
+    align-items: flex-start;
+    gap: 5px;
+    color: var(--fg-tertiary);
+    font-size: 12px;
+    line-height: 1.45;
+  }
+  .rec-quote i { flex-shrink: 0; margin-top: 3px; color: var(--fx-gray-6); font-size: 10px; }
+  .fox-cell { color: var(--fg-secondary); }
+  .fox-cell strong { color: var(--fg-primary); }
+  .fox-cell a { color: var(--fg-primary); text-decoration-color: var(--brand-red); }
+
+  .insights-section { margin-top: 40px; margin-bottom: 48px; }
+  .insights-section--agentic { margin-top: 48px; }
+  .insights-section--agentic > .section-heading {
+    margin-bottom: 20px;
+    padding-bottom: 14px;
+    border-bottom: 2px solid rgba(66, 133, 244, 0.38);
+  }
+  .insight-card {
+    margin-bottom: 12px;
+    padding: 20px 20px 20px 24px;
+    border: none;
+    border-radius: var(--radius-lg);
+    background: var(--bg-elevated-1);
+  }
+  .insight-card:last-child { margin-bottom: 0; }
+  .insight-card h3 {
+    margin: 0 0 10px;
+    color: var(--fg-primary);
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.25;
+  }
+  .insight-card p {
+    margin: 0 0 10px;
+    color: var(--fg-secondary);
+    font-size: 14px;
+    line-height: 1.55;
+  }
+  .insight-card p:last-child { margin-bottom: 0; }
+  .insight-list {
+    margin: 0 0 10px;
+    padding-left: 18px;
+    color: var(--fg-secondary);
+    font-size: 14px;
+    line-height: 1.55;
+  }
+  .insight-list li { margin-bottom: 6px; }
+  .insight-list li:last-child { margin-bottom: 0; }
+  .insight-list strong { color: var(--fg-primary); font-weight: var(--fw-emphasis); }
+  .insight-card p strong {
+    color: var(--fg-primary);
+    font-weight: 700;
+  }
+  .insight-card .insight-approach {
+    color: var(--fg-primary);
+    font-weight: var(--fw-emphasis);
+    text-decoration: underline;
+    text-decoration-color: var(--brand-red);
+    text-underline-offset: 2px;
+  }
+  .insight-card p.insight-approach-line { margin-top: 14px; }
+  .insight-card p.insight-lead {
+    color: var(--fg-tertiary);
+    font-style: italic;
+  }
+  .insight-card .translation-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 0 0 10px;
+    align-items: stretch;
+  }
+  .insight-card .translation-grid > div {
+    display: flex;
+    flex-direction: column;
+    padding: 14px 16px 16px;
+    border: 1px solid var(--stroke-hairline);
+    border-radius: var(--radius-md);
+    background: var(--bg-elevated-2);
+  }
+  .insight-card .translation-grid h4 {
+    margin: 0 0 10px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid rgba(66, 133, 244, 0.38);
+    color: var(--fg-primary);
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.25;
+  }
+  .insight-card .translation-grid .insight-list {
+    margin-bottom: 0;
+    flex: 1;
+  }
+  .insight-card .ai-mode-flow {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 8px 6px;
+    margin: 12px 0 14px;
+    padding: 14px 16px;
+    border: 1px solid var(--stroke-hairline);
+    border-radius: var(--radius-md);
+    background: var(--bg-elevated-2);
+  }
+  .insight-card .ai-mode-flow__step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2px;
+    min-width: 72px;
+    max-width: 110px;
+    padding: 8px 10px;
+    border: 1px solid var(--stroke-hairline);
+    border-radius: var(--radius-md);
+    background: var(--bg-elevated-1);
+    font-size: 12px;
+    line-height: 1.3;
+  }
+  .insight-card .ai-mode-flow__step strong {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--fg-primary);
+  }
+  .insight-card .ai-mode-flow__detail {
+    font-size: 10px;
+    color: var(--fg-tertiary);
+    line-height: 1.25;
+  }
+  .insight-card .ai-mode-flow__label {
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--fg-tertiary);
+  }
+  .insight-card .ai-mode-flow__arrow {
+    color: var(--fx-blue-accent);
+    font-size: 14px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .insight-card .ai-mode-flow__step--fanout {
+    border-color: rgba(66, 133, 244, 0.35);
+  }
+  .insight-card .ai-mode-flow__step--out {
+    border-color: rgba(3, 167, 117, 0.35);
+  }
+  .stance-label--platform {
+    display: inline-block;
+    margin-bottom: 6px;
+    color: var(--fx-gray-6);
+    font-size: 10px;
+    font-weight: var(--fw-heading);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .report-primary { margin: 0; }
+  .contradictions-section {
+    margin-top: 48px;
+  }
+  .contradictions-section > .section-heading {
+    margin-bottom: 20px;
+    padding-bottom: 14px;
+    border-bottom: 2px solid rgba(251, 191, 36, 0.38);
+  }
+  .section-heading {
+    margin: 0 0 16px;
+    color: var(--fg-primary);
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    line-height: 1.15;
+    text-transform: uppercase;
+  }
+  .callout--section {
+    margin-bottom: 20px;
+    background: var(--bg-elevated-2);
+  }
+  .callout--section p { font-size: 17px; line-height: 1.55; }
+  .callout--section > i {
+    background: var(--fx-yellow);
+    color: var(--fg-inverse);
+    box-shadow: none;
+  }
+  .contradiction-card {
+    position: relative;
+    margin-bottom: 20px;
+    border: 0;
+    border-radius: var(--radius-lg);
+    background: var(--bg-elevated-1);
+    overflow: hidden;
+  }
+  .contradiction-card:last-of-type { margin-bottom: 0; }
+  .contradiction-title {
+    margin: 0;
+    padding: 18px 22px 16px;
+    color: var(--fg-primary);
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0;
+  }
+  .stance-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .stance {
+    margin: 0;
+    padding: 16px 22px 18px;
+    color: var(--fg-secondary);
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  .stance-col--google,
+  .stance-col--google-io { border-right: 1px solid var(--stroke-hairline); }
+  .stance-label {
+    display: inline-block;
+    margin-bottom: 6px;
+    color: var(--fg-tertiary);
+    font-size: 10px;
+    font-weight: var(--fw-heading);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .stance-label:not(.stance-label--logo) {
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
+  .stance-label--logo {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    border: 1px solid var(--stroke-default);
+    border-radius: var(--radius-sm);
+    background: var(--fx-glass-light);
+    text-transform: none;
+    letter-spacing: normal;
+  }
+  .stance-label--logo img {
+    display: block;
+    height: 14px;
+    width: auto;
+    max-height: 14px;
+  }
+  .stance-label--google {
+    border-color: rgba(66, 133, 244, 0.35);
+    background: rgba(66, 133, 244, 0.10);
+  }
+  .stance-label--microsoft {
+    border-color: rgba(0, 164, 239, 0.35);
+    background: rgba(0, 164, 239, 0.10);
+  }
+  .stance-label--google img,
+  .stance-label--microsoft img {
+    box-sizing: border-box;
+    padding: 0;
+    border-radius: 0;
+    background: transparent;
+  }
+  .stance-label--microsoft img {
+    filter: brightness(0) invert(1);
+    opacity: 0.92;
+  }
+  .stance--fox {
+    margin: 0;
+    padding: 16px 22px 18px;
+    border-top: 1px solid rgba(251, 191, 36, 0.22);
+    background: rgba(251, 191, 36, 0.05);
+    color: var(--fg-secondary);
+  }
+  .stance--fox .stance-label--logo {
+    margin-bottom: 7px;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+  .stance--fox .stance-label--fox img {
+    filter: brightness(0) invert(1);
+    height: 13px;
+    max-height: 13px;
+    opacity: 0.88;
+  }
+  .stance--fox > span:not(.stance-label) {
+    color: var(--fg-primary);
+    font-weight: 700;
+  }
+  .stance--fox strong { color: var(--fg-primary); }
+
+  @media screen and (max-width: 768px) {
+    .header { padding: 20px 24px; }
+    .header-brand::after { display: none; }
+    .page { width: min(100vw - 48px, 1120px); padding: 40px 24px 56px; }
+    .page-title { font-size: clamp(38px, 12vw, 58px); }
+    .callout--intro { gap: 8px; padding: 20px 20px 22px; }
+    .align-table thead { display: none; }
+    .align-table tbody td { display: block; width: 100%; }
+    .align-table tbody td:first-child { padding-bottom: 4px; border-bottom: 0; }
+    .align-table tbody td:last-child { padding-top: 4px; }
+    .stance-grid { grid-template-columns: 1fr; }
+    .stance-col--google,
+    .stance-col--google-io { border-right: 0; border-bottom: 1px solid var(--stroke-hairline); }
+    .insight-card .translation-grid { grid-template-columns: 1fr; }
+    .insight-card .ai-mode-flow { flex-direction: column; align-items: center; justify-content: center; }
+    .insight-card .ai-mode-flow__arrow { transform: rotate(90deg); align-self: center; }
+    .insight-card .ai-mode-flow__step { max-width: none; }
+    .insights-section--agentic > .section-heading { margin-bottom: 14px; padding-bottom: 10px; }
+    .contradictions-section { margin-top: 40px; }
+    .contradictions-section > .section-heading { margin-bottom: 14px; padding-bottom: 10px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 1ms !important; transition-duration: 1ms !important; }
+  }
+
+  /* Print inset: @page margin + .page padding (sides ~0.48in total per edge) */
+  @page {
+    size: letter;
+    margin: 0.12in 0.24in 0.44in 0.24in;
+    background: #000000;
+    @bottom-center {
+      content: "Page " counter(page) " of " counter(pages);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 7pt;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      color: #969696;
+    }
+  }
+  @media print {
+    html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    html, body { font-size: 7pt; background: #000000 !important; }
+    body::before, body::after { display: none; }
+    .header {
+      position: static;
+      margin: 0 0 0.04in;
+      padding: 0.08in 0;
+      background: #000 !important;
+    }
+    .brand-logo--fox-header { height: 12px; }
+    .page { width: auto; max-width: none; padding: 0.04in 0.24in 0.28in; }
+    .report-primary { break-after: page; page-break-after: always; }
+    .page-title { margin-bottom: 0.03in; font-size: 18pt; line-height: 0.96; break-after: avoid; page-break-after: avoid; }
+    .page-meta { margin-bottom: 0.05in; font-size: 6pt; gap: 4px; }
+    .page-meta i { font-size: 6.5pt; }
+    .callout--intro {
+      margin-bottom: 0.08in;
+      padding: 10px 12px 11px;
+      overflow: visible !important;
+      position: static !important;
+      background: linear-gradient(135deg, #2a0a12 0%, #1a1020 40%, #111111 100%) !important;
+      border: none;
+      border-radius: 6px;
+    }
+    .callout--intro p { font-size: 7.1pt; line-height: 1.28; color: #d9d9d9 !important; position: static !important; z-index: auto !important; }
+    .callout p { font-size: 7.2pt; line-height: 1.32; color: #d9d9d9 !important; position: static !important; z-index: auto !important; }
+    .callout--intro::before {
+      position: static !important;
+      display: inline-block !important;
+      margin-bottom: 6px;
+      font-size: 6.5pt;
+      padding: 4px 9px;
+      background: #ef0033 !important;
+      color: #fff !important;
+      border-radius: 3px;
+    }
+    .insights-section { margin-top: 0.05in; margin-bottom: 0.05in; }
+    .insights-section--agentic > .section-heading {
+      margin-bottom: 0.06in;
+      padding-bottom: 0.04in;
+      border-bottom-color: #666;
+    }
+    .report-primary .align-table { margin-top: 0.08in; }
+    .insights-section .section-heading { margin-bottom: 0.04in; font-size: 9pt; }
+    .insight-card { margin-bottom: 0.04in; padding: 5px 7px 5px 9px; }
+    .insight-card:last-child { margin-bottom: 0; }
+    .insight-card h3 { margin-bottom: 0.02in; font-size: 8pt; font-weight: 700; }
+    .insight-card p { margin-bottom: 0.02in; font-size: 6.1pt; line-height: 1.22; }
+    .insight-card p:last-child { margin-bottom: 0; }
+    .insight-card p.insight-approach-line { margin-top: 0.08in; }
+    .insight-card .translation-grid { grid-template-columns: 1fr; gap: 0.06in; }
+    .insight-card .translation-grid h4 {
+      font-size: 6.5pt;
+      font-weight: 700;
+      margin-bottom: 0.02in;
+      padding-bottom: 0.03in;
+      border-bottom: 1px solid #666;
+    }
+    .insight-card .ai-mode-flow {
+      margin: 0.04in 0;
+      padding: 4px 6px;
+      gap: 2px;
+    }
+    .insight-card .ai-mode-flow__step {
+      min-width: 0;
+      max-width: none;
+      padding: 2px 4px;
+      font-size: 5.5pt;
+    }
+    .insight-card .ai-mode-flow__step strong { font-size: 5.5pt; }
+    .insight-card .ai-mode-flow__detail { font-size: 5pt; }
+    .insight-card .ai-mode-flow__arrow { font-size: 6pt; }
+    .insight-card .insight-approach {
+      font-weight: 700;
+      text-decoration: underline;
+      text-decoration-color: #ef0033;
+      text-underline-offset: 1px;
+    }
+    .section-heading { margin-bottom: 0.08in; font-size: 11pt; font-weight: 700; }
+    .callout, .contradiction-card, .insight-card { break-inside: avoid; page-break-inside: avoid; }
+    .align-table { table-layout: fixed; border-collapse: collapse; break-inside: auto; page-break-inside: auto; }
+    .align-table thead { display: table-header-group !important; }
+    .align-table tbody tr { break-inside: avoid; page-break-inside: avoid; }
+    .report-primary .align-table tbody td { display: table-cell !important; width: auto !important; font-size: 6.25pt; line-height: 1.21; padding: 2px 6px; vertical-align: top; }
+    .report-primary .align-table tbody td.fox-cell { font-size: 8pt; line-height: 1.17; padding: 2px 7px; }
+    .align-table thead th:first-child { width: 50% !important; }
+    .align-table thead th:last-child { width: 50% !important; }
+    .report-primary .align-table thead th { font-size: 9pt; font-weight: 700; padding: 4px 7px; color: #ffffff !important; }
+    .align-table thead th .th-brand { color: #ffffff !important; }
+    .contradictions-section {
+      margin-top: 0;
+      break-before: auto;
+      page-break-before: auto;
+    }
+    .contradictions-section > .section-heading {
+      margin-bottom: 0.06in;
+      padding-bottom: 0.04in;
+      border-bottom-color: #666;
+    }
+    .callout--section { padding: 12px 14px 13px; }
+    .callout--section p { font-size: 8.8pt !important; line-height: 1.38 !important; }
+    .callout--section > i { width: 28px; height: 28px; font-size: 15px; }
+    .report-primary .rec-cell { gap: 4px; align-items: flex-start; }
+    .report-primary .rec-icon { width: 14px; height: 14px; font-size: 9px; border-radius: 3px; margin-top: 0; }
+    .report-primary .rec-title { font-size: 8pt; margin-bottom: 1px; line-height: 1.12; }
+    .report-primary .rec-quote { font-size: 8pt; line-height: 1.15; }
+    .report-primary .rec-quote i { display: none; }
+    .rec-cell { gap: 6px; }
+    .rec-icon { width: 19px; height: 19px; font-size: 11px; border-radius: 5px; }
+    .rec-title { font-size: 7.6pt; margin-bottom: 2px; }
+    .rec-quote { font-size: 5.9pt; line-height: 1.3; }
+    .contradiction-card { margin-bottom: 0.14in; }
+    .contradiction-title { font-size: 10pt; font-weight: 700; padding: 10px 12px 8px; }
+    .stance-grid { display: grid; grid-template-columns: 1fr 1fr; }
+    .stance { font-size: 9pt; padding: 8px 12px; }
+    .stance-label:not(.stance-label--logo) { font-size: 7pt; }
+    .stance--fox { padding: 8px 12px; }
+    .stance--fox > span:not(.stance-label) { font-weight: 700; color: var(--fg-primary); }
+    a[href^="http"]::after { content: none; }
+  }
+</style>
+</head>
+<body data-report-editable="true" data-report-source="cursor" data-text-node-baseline="249">
+<div class="header">
+<span class="header-brand">
+<img alt="FOX One" class="brand-logo brand-logo--fox-header brand-logo--on-dark" height="18" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB3aWR0aD0iMzk2IiBoZWlnaHQ9Ijg4IiB2aWV3Qm94PSIwIDAgMzk2IDg4IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxnIGNsaXAtcGF0aD0idXJsKCNjbGlwMF81MjJfMTcwKSI+CiAgICA8cGF0aCBkPSJNMjQuNjUxOCAyMy45MzI0SDU0LjMwNzhMNTIuNjgwOCAwSDBWODcuNjk0MUgyNC42NTE4VjU5LjM5NjlINDguODEwNVYzNS40NjQ1SDI0LjY1MThWMjMuOTMyNFoiIHN0eWxlPSJmaWxsOiByZ2IoMCwgMCwgMCk7Ii8+CiAgICA8cGF0aCBkPSJNMTM2LjYyIDQzLjk3MUMxMzYuNjIgMjAuMjg2NyAxMTcuOTM0IDEuMjM5OTkgOTQuODg0NiAxLjIzOTk5QzcxLjgzNTIgMS4yMzk5OSA1My4yNzI1IDIwLjI4NjcgNTMuMjcyNSA0My45NzFDNTMuMjcyNSA2Ny42NTU0IDcxLjk1ODUgODYuNzAyMSA5NC44ODQ2IDg2LjcwMjFDMTE3LjgxMSA4Ni43MDIxIDEzNi42MiA2Ny42NTU0IDEzNi42MiA0My45NzFaTTEwMi41MDIgNjEuNTA0OUMxMDIuNTAyIDY1Ljc3MDYgOTkuMzk1OSA2OC44OTU0IDk1LjI3OTEgNjguODk1NEM5MS4xNjIyIDY4Ljg5NTQgODcuOTMyOCA2NS43NzA2IDg3LjkzMjggNjEuNTA0OVYyNi40MTI0Qzg3LjkzMjggMjIuMTQ2NyA5MS4wMzkgMTkuMDIxOSA5NS4xNTU4IDE5LjAyMTlDOTkuMjcyNyAxOS4wMjE5IDEwMi41MDIgMjIuMTQ2NyAxMDIuNTAyIDI2LjQxMjRWNjEuNTA0OVoiIHN0eWxlPSJmaWxsOiByZ2IoMCwgMCwgMCk7Ii8+CiAgICA8cGF0aCBkPSJNMjAwLjUxNyAwSDE3My40OTlMMTYzLjAyMiAxOS4wNDY3TDE1Mi45NCAwSDEyNC45MTFMMTQ5LjQ2NCA0Mi40ODNMMTIzLjU1NSA4Ny42OTQxSDE1MC42OTZMMTYyLjc3NiA2NS41MjI2TDE3NC44NTUgODcuNjk0MUgyMDIuNzYxTDE3Ni40ODIgNDIuMjEwMkwyMDAuNTE3IDBaIiBzdHlsZT0iZmlsbDogcmdiKDAsIDAsIDApOyIvPgogICAgPHBhdGggZD0iTTM1MC4xMDQgMEgyNDQuOTg5QzIxOC40NjQgMCAxOTkuMjg1IDE4LjQyNjcgMTk5LjI4NSA0My44NDcxQzE5OS4yODUgNjkuMjY3NSAyMTguNDY0IDg3LjY5NDEgMjQ0Ljk4OSA4Ny42OTQxSDM1MC4xMDRDMzc2LjYzIDg3LjY5NDEgMzk1LjgwOSA2OS4yNjc1IDM5NS44MDkgNDMuODQ3MUMzOTUuODA5IDE4LjQyNjcgMzc2LjYzIDAgMzUwLjEwNCAwWk0yNDYuNDkzIDcxLjU0OTFDMjMxLjE4NCA3MS41NDkxIDIyMi4yMTEgNjAuNjM2OSAyMjIuMjExIDQzLjk3MTFDMjIyLjIxMSAyNy4zMDUyIDIzMS4zMDcgMTYuMTQ1IDI0Ni40OTMgMTYuMTQ1QzI2MS42NzggMTYuMTQ1IDI3MC43NzUgMjcuMDU3MiAyNzAuNzc1IDQzLjk3MTFDMjcwLjc3NSA2MC44ODQ5IDI2MS44MDIgNzEuNTQ5MSAyNDYuNDkzIDcxLjU0OTFaTTMyMi4zNDYgNzAuOTA0M0gzMDguODg3TDI5MC4yIDM5LjA4NTRIMjg5LjgzMVY3MC45MDQzSDI3Ny41MDVWMTYuNzY1MUgyOTAuOTY1TDMwOS42NTEgNDguMzM1OUgzMTAuMDJWMTYuNzY1MUgzMjIuMzQ2VjcwLjkwNDNaTTM2Ny4zMTEgNzAuOTA0M0gzMzEuNTY2VjE2Ljc2NTFIMzY2LjY5NUwzNjcuOTUyIDI3LjkyNTJIMzQ0LjQxVjM4LjA2ODZIMzY1LjQ2MlY0OS4yMjg4SDM0NC40MVY1OS43NDQxSDM2OC41NjhMMzY3LjMxMSA3MC45MDQzWiIgc3R5bGU9ImZpbGw6IHJnYigwLCAwLCAwKTsiLz4KICAgIDxwYXRoIGQ9Ik0yNDYuNDkzIDI3LjY3NzJDMjQwLjM3OSAyNy42NzcyIDIzNy4wMjcgMzIuMDY2OSAyMzcuMDI3IDQwLjIwMTRWNDcuNDY3OUMyMzcuMDI3IDU1LjYwMjUgMjQwLjM3OSA1OS45OTIxIDI0Ni40OTMgNTkuOTkyMUMyNTIuNjA3IDU5Ljk5MjEgMjU1Ljk1OSA1NS42MDI1IDI1NS45NTkgNDcuNDY3OVY0MC4yMDE0QzI1NS45NTkgMzIuMDY2OSAyNTIuNjA3IDI3LjY3NzIgMjQ2LjQ5MyAyNy42NzcyWiIgc3R5bGU9ImZpbGw6IHJnYigwLCAwLCAwKTsiLz4KICA8L2c+CiAgPGRlZnM+CiAgICA8Y2xpcFBhdGggaWQ9ImNsaXAwXzUyMl8xNzAiPgogICAgICA8cmVjdCB3aWR0aD0iMzk1LjgwOSIgaGVpZ2h0PSI4Ny42OTQxIiBmaWxsPSJ3aGl0ZSIvPgogICAgPC9jbGlwUGF0aD4KICA8L2RlZnM+Cjwvc3ZnPg==" width="80">
+</span>
+</div>
+<div class="page">
+<section class="report-primary">
+<h1 class="page-title" data-edit-format="plain" data-edit-id="txt_report_title" data-edit-label="Report title" data-max-length="120" data-required="true">AI Search Readiness</h1>
+<p class="page-meta"><i class="ph ph-user"></i><span data-edit-format="plain" data-edit-id="txt_meta_part_001" data-edit-label="Meta line part 1">Angel Nieves (SEO Manager), COE Team</span><span data-edit-format="plain" data-edit-id="txt_meta_part_002" data-edit-label="Meta line part 2" style="color:var(--grey-300);">·</span><i class="ph ph-calendar-blank"></i><span data-edit-format="plain" data-edit-id="txt_meta_part_003" data-edit-label="Meta line part 3">May 2026</span><span data-edit-format="plain" data-edit-id="txt_meta_part_004" data-edit-label="Meta line part 4" style="color:var(--grey-300);">·</span><i class="ph ph-link"></i><a data-edit-format="markdown-inline" data-edit-href-readonly="true" data-edit-id="txt_meta_google_guide_link" data-edit-label="Meta: Google guide link" data-max-length="120" href="https://developers.google.com/search/docs/fundamentals/ai-optimization-guide" rel="noopener" target="_blank">Google's Official Guide</a><span data-edit-format="plain" data-edit-id="txt_meta_part_005" data-edit-label="Meta line part 5">(May 15, 2026)</span></p>
+<div class="callout callout--intro"><i class="ph ph-lightbulb"></i><p data-edit-format="markdown-block" data-edit-id="md_intro_callout" data-edit-label="Intro callout" data-max-length="1200" data-required="true"><span>Google's official guide confirms what our SEO program has built toward: Foundational SEO is the </span><strong>floor</strong><strong>, table stakes for visibility on any AI surface. Google's product team (Search Agents at I/O 2026) and tooling team (Agentic Browsing in Chrome) shipped a new </strong><span> that sits above traditional SEO that is not mentioned in the May 15 AI search optimization doc. Our SEO program is hardening the floor and positioned to extend into this ceiling. This brief, how Google's guide to AI search optimization aligns to current SEO work, and our positioning on the new agentic ceiling.</span></p></div>
+<section class="insights-section">
+<h2 class="section-heading" data-edit-format="plain" data-edit-id="txt_section_preface" data-edit-label="Section heading: Preface" data-max-length="120" data-required="true">Preface</h2>
+<article class="insight-card" data-edit-format="markdown-block" data-edit-id="md_preface_card" data-edit-label="Preface card" data-max-length="1500" data-required="true">
+<h3>Google's public guidance isn't the full picture</h3>
+<p><span>A 2024 leak of internal API documentation, later acknowledged in&nbsp;</span><a data-edit-href-readonly="true" href="https://thecapitolforum.com/wp-content/uploads/2023/10/101823-USA-v-Google-PM.pdf" rel="noopener" target="_blank">DOJ antitrust proceedings</a><span>, surfaced signals Google has historically downplayed: site-level authority scoring, click-behavior re-ranking, sandbox-like behavior for new domains, and LLM-driven content quality measurement. The May 2026 guide is useful, but we need to be mindful that it reflects what Google wants publishers to focus on for Google, not the universal rulebook for every AI system.</span></p>
+</article>
+</section>
+<table class="align-table">
+<thead>
+<tr>
+<th><span class="th-brand"><img alt="Google" class="brand-logo brand-logo--sm" height="14" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4bWw6c3BhY2U9InByZXNlcnZlIiBvdmVyZmxvdz0iaGlkZGVuIiB2aWV3Qm94PSIwIDAgMjY4LjE1MiAyNzMuODgzIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImEiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iIzBmYmM1YyIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzBjYmE2NSIvPjwvbGluZWFyR3JhZGllbnQ+PGxpbmVhckdyYWRpZW50IGlkPSJnIj48c3RvcCBvZmZzZXQ9Ii4yMzEiIHN0b3AtY29sb3I9IiMwZmJjNWYiLz48c3RvcCBvZmZzZXQ9Ii4zMTIiIHN0b3AtY29sb3I9IiMwZmJjNWYiLz48c3RvcCBvZmZzZXQ9Ii4zNjYiIHN0b3AtY29sb3I9IiMwZmJjNWUiLz48c3RvcCBvZmZzZXQ9Ii40NTgiIHN0b3AtY29sb3I9IiMwZmJjNWQiLz48c3RvcCBvZmZzZXQ9Ii41NCIgc3RvcC1jb2xvcj0iIzEyYmM1OCIvPjxzdG9wIG9mZnNldD0iLjY5OSIgc3RvcC1jb2xvcj0iIzI4YmYzYyIvPjxzdG9wIG9mZnNldD0iLjc3MSIgc3RvcC1jb2xvcj0iIzM4YzAyYiIvPjxzdG9wIG9mZnNldD0iLjg2MSIgc3RvcC1jb2xvcj0iIzUyYzIxOCIvPjxzdG9wIG9mZnNldD0iLjkxNSIgc3RvcC1jb2xvcj0iIzY3YzMwZiIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzg2YzUwNCIvPjwvbGluZWFyR3JhZGllbnQ+PGxpbmVhckdyYWRpZW50IGlkPSJoIj48c3RvcCBvZmZzZXQ9Ii4xNDIiIHN0b3AtY29sb3I9IiMxYWJkNGQiLz48c3RvcCBvZmZzZXQ9Ii4yNDgiIHN0b3AtY29sb3I9IiM2ZWMzMGQiLz48c3RvcCBvZmZzZXQ9Ii4zMTIiIHN0b3AtY29sb3I9IiM4YWM1MDIiLz48c3RvcCBvZmZzZXQ9Ii4zNjYiIHN0b3AtY29sb3I9IiNhMmM2MDAiLz48c3RvcCBvZmZzZXQ9Ii40NDYiIHN0b3AtY29sb3I9IiNjOGM5MDMiLz48c3RvcCBvZmZzZXQ9Ii41NCIgc3RvcC1jb2xvcj0iI2ViY2IwMyIvPjxzdG9wIG9mZnNldD0iLjYxNiIgc3RvcC1jb2xvcj0iI2Y3Y2QwNyIvPjxzdG9wIG9mZnNldD0iLjY5OSIgc3RvcC1jb2xvcj0iI2ZkY2QwNCIvPjxzdG9wIG9mZnNldD0iLjc3MSIgc3RvcC1jb2xvcj0iI2ZkY2UwNSIvPjxzdG9wIG9mZnNldD0iLjg2MSIgc3RvcC1jb2xvcj0iI2ZmY2UwYSIvPjwvbGluZWFyR3JhZGllbnQ+PGxpbmVhckdyYWRpZW50IGlkPSJmIj48c3RvcCBvZmZzZXQ9Ii4zMTYiIHN0b3AtY29sb3I9IiNmZjRjM2MiLz48c3RvcCBvZmZzZXQ9Ii42MDQiIHN0b3AtY29sb3I9IiNmZjY5MmMiLz48c3RvcCBvZmZzZXQ9Ii43MjciIHN0b3AtY29sb3I9IiNmZjc4MjUiLz48c3RvcCBvZmZzZXQ9Ii44ODUiIHN0b3AtY29sb3I9IiNmZjhkMWIiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNmZjlmMTMiLz48L2xpbmVhckdyYWRpZW50PjxsaW5lYXJHcmFkaWVudCBpZD0iYiI+PHN0b3Agb2Zmc2V0PSIuMjMxIiBzdG9wLWNvbG9yPSIjZmY0NTQxIi8+PHN0b3Agb2Zmc2V0PSIuMzEyIiBzdG9wLWNvbG9yPSIjZmY0NTQwIi8+PHN0b3Agb2Zmc2V0PSIuNDU4IiBzdG9wLWNvbG9yPSIjZmY0NjQwIi8+PHN0b3Agb2Zmc2V0PSIuNTQiIHN0b3AtY29sb3I9IiNmZjQ3M2YiLz48c3RvcCBvZmZzZXQ9Ii42OTkiIHN0b3AtY29sb3I9IiNmZjUxMzgiLz48c3RvcCBvZmZzZXQ9Ii43NzEiIHN0b3AtY29sb3I9IiNmZjViMzMiLz48c3RvcCBvZmZzZXQ9Ii44NjEiIHN0b3AtY29sb3I9IiNmZjZjMjkiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNmZjhjMTgiLz48L2xpbmVhckdyYWRpZW50PjxsaW5lYXJHcmFkaWVudCBpZD0iZCI+PHN0b3Agb2Zmc2V0PSIuNDA4IiBzdG9wLWNvbG9yPSIjZmI0ZTVhIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjZmY0NTQwIi8+PC9saW5lYXJHcmFkaWVudD48bGluZWFyR3JhZGllbnQgaWQ9ImMiPjxzdG9wIG9mZnNldD0iLjEzMiIgc3RvcC1jb2xvcj0iIzBjYmE2NSIvPjxzdG9wIG9mZnNldD0iLjIxIiBzdG9wLWNvbG9yPSIjMGJiODZkIi8+PHN0b3Agb2Zmc2V0PSIuMjk3IiBzdG9wLWNvbG9yPSIjMDliNDc5Ii8+PHN0b3Agb2Zmc2V0PSIuMzk2IiBzdG9wLWNvbG9yPSIjMDhhZDkzIi8+PHN0b3Agb2Zmc2V0PSIuNDc3IiBzdG9wLWNvbG9yPSIjMGFhNmE5Ii8+PHN0b3Agb2Zmc2V0PSIuNTY4IiBzdG9wLWNvbG9yPSIjMGQ5Y2M2Ii8+PHN0b3Agb2Zmc2V0PSIuNjY3IiBzdG9wLWNvbG9yPSIjMTg5M2RkIi8+PHN0b3Agb2Zmc2V0PSIuNzY5IiBzdG9wLWNvbG9yPSIjMjU4YmYxIi8+PHN0b3Agb2Zmc2V0PSIuODU5IiBzdG9wLWNvbG9yPSIjMzA4NmZmIi8+PC9saW5lYXJHcmFkaWVudD48bGluZWFyR3JhZGllbnQgaWQ9ImUiPjxzdG9wIG9mZnNldD0iLjM2NiIgc3RvcC1jb2xvcj0iI2ZmNGUzYSIvPjxzdG9wIG9mZnNldD0iLjQ1OCIgc3RvcC1jb2xvcj0iI2ZmOGExYiIvPjxzdG9wIG9mZnNldD0iLjU0IiBzdG9wLWNvbG9yPSIjZmZhMzEyIi8+PHN0b3Agb2Zmc2V0PSIuNjE2IiBzdG9wLWNvbG9yPSIjZmZiNjBjIi8+PHN0b3Agb2Zmc2V0PSIuNzcxIiBzdG9wLWNvbG9yPSIjZmZjZDBhIi8+PHN0b3Agb2Zmc2V0PSIuODYxIiBzdG9wLWNvbG9yPSIjZmVjZjBhIi8+PHN0b3Agb2Zmc2V0PSIuOTE1IiBzdG9wLWNvbG9yPSIjZmVjZjA4Ii8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjZmRjZDAxIi8+PC9saW5lYXJHcmFkaWVudD48bGluZWFyR3JhZGllbnQgeGxpbms6aHJlZj0iI2EiIGlkPSJzIiB4MT0iMjE5LjciIHgyPSIyNTQuNDY3IiB5MT0iMzI5LjUzNSIgeTI9IjMyOS41MzUiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIi8+PHJhZGlhbEdyYWRpZW50IHhsaW5rOmhyZWY9IiNiIiBpZD0ibSIgY3g9IjEwOS42MjciIGN5PSIxMzUuODYyIiByPSI3MS40NiIgZng9IjEwOS42MjciIGZ5PSIxMzUuODYyIiBncmFkaWVudFRyYW5zZm9ybT0ibWF0cml4KC0xLjkzNjg4IDEuMDQzIDEuNDU1NzMgMi41NTU0MiAyOTAuNTI1IC00MDAuNjM0KSIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiLz48cmFkaWFsR3JhZGllbnQgeGxpbms6aHJlZj0iI2MiIGlkPSJuIiBjeD0iNDUuMjU5IiBjeT0iMjc5LjI3NCIgcj0iNzEuNDYiIGZ4PSI0NS4yNTkiIGZ5PSIyNzkuMjc0IiBncmFkaWVudFRyYW5zZm9ybT0ibWF0cml4KC0zLjUxMjYgLTQuNDU4MDkgLTEuNjkyNTUgMS4yNjA2MiA4NzAuOCAxOTEuNTU0KSIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiLz48cmFkaWFsR3JhZGllbnQgeGxpbms6aHJlZj0iI2QiIGlkPSJsIiBjeD0iMzA0LjAxNyIgY3k9IjExOC4wMDkiIHI9IjQ3Ljg1NCIgZng9IjMwNC4wMTciIGZ5PSIxMTguMDA5IiBncmFkaWVudFRyYW5zZm9ybT0ibWF0cml4KDIuMDY0MzUgMCAwIDIuNTkyMDQgLTI5Ny42NzkgLTE1MS43NDcpIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIvPjxyYWRpYWxHcmFkaWVudCB4bGluazpocmVmPSIjZSIgaWQ9Im8iIGN4PSIxODEuMDAxIiBjeT0iMTc3LjIwMSIgcj0iNzEuNDYiIGZ4PSIxODEuMDAxIiBmeT0iMTc3LjIwMSIgZ3JhZGllbnRUcmFuc2Zvcm09Im1hdHJpeCgtLjI0ODU4IDIuMDgzMTQgMi45NjI0OSAuMzM0MTcgLTI1NS4xNDYgLTMzMS4xNjQpIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIvPjxyYWRpYWxHcmFkaWVudCB4bGluazpocmVmPSIjZiIgaWQ9InAiIGN4PSIyMDcuNjczIiBjeT0iMTA4LjA5NyIgcj0iNDEuMTAyIiBmeD0iMjA3LjY3MyIgZnk9IjEwOC4wOTciIGdyYWRpZW50VHJhbnNmb3JtPSJtYXRyaXgoLTEuMjQ5MiAxLjM0MzI2IC0zLjg5Njg0IC0zLjQyNTcgODgwLjUwMSAxOTQuOTA1KSIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiLz48cmFkaWFsR3JhZGllbnQgeGxpbms6aHJlZj0iI2ciIGlkPSJyIiBjeD0iMTA5LjYyNyIgY3k9IjEzNS44NjIiIHI9IjcxLjQ2IiBmeD0iMTA5LjYyNyIgZnk9IjEzNS44NjIiIGdyYWRpZW50VHJhbnNmb3JtPSJtYXRyaXgoLTEuOTM2ODggLTEuMDQzIDEuNDU1NzMgLTIuNTU1NDIgMjkwLjUyNSA4MzguNjgzKSIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiLz48cmFkaWFsR3JhZGllbnQgeGxpbms6aHJlZj0iI2giIGlkPSJqIiBjeD0iMTU0Ljg3IiBjeT0iMTQ1Ljk2OSIgcj0iNzEuNDYiIGZ4PSIxNTQuODciIGZ5PSIxNDUuOTY5IiBncmFkaWVudFRyYW5zZm9ybT0ibWF0cml4KC0uMDgxNCAtMS45MzcyMiAyLjkyNjc0IC0uMTE2MjUgLTIxNS4xMzUgNjMyLjg2KSIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiLz48ZmlsdGVyIGlkPSJxIiB3aWR0aD0iMS4wOTciIGhlaWdodD0iMS4xMTYiIHg9Ii0uMDQ4IiB5PSItLjA1OCIgY29sb3ItaW50ZXJwb2xhdGlvbi1maWx0ZXJzPSJzUkdCIj48ZmVHYXVzc2lhbkJsdXIgc3RkRGV2aWF0aW9uPSIxLjcwMSIvPjwvZmlsdGVyPjxmaWx0ZXIgaWQ9ImsiIHdpZHRoPSIxLjAzMyIgaGVpZ2h0PSIxLjAyIiB4PSItLjAxNyIgeT0iLS4wMSIgY29sb3ItaW50ZXJwb2xhdGlvbi1maWx0ZXJzPSJzUkdCIj48ZmVHYXVzc2lhbkJsdXIgc3RkRGV2aWF0aW9uPSIuMjQyIi8+PC9maWx0ZXI+PGNsaXBQYXRoIGlkPSJpIiBjbGlwUGF0aFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTTM3MS4zNzggMTkzLjI0SDIzNy4wODN2NTMuNDM4aDc3LjE2N2MtMS4yNDEgNy41NjMtNC4wMjYgMTUuMDAzLTguMTA1IDIxLjc4Ni00LjY3NCA3Ljc3My0xMC40NTEgMTMuNjktMTYuMzczIDE4LjE5Ni0xNy43NCAxMy40OTgtMzguNDIgMTYuMjU4LTUyLjc4MyAxNi4yNTgtMzYuMjgzIDAtNjcuMjgzLTIzLjI4Ni03OS4yODUtNTQuOTI4LS40ODQtMS4xNDktLjgwNS0yLjMzNS0xLjE5Ny0zLjUwN2E4MS4xMTUgODEuMTE1IDAgMCAxLTQuMTAxLTI1LjQ0OGMwLTkuMjI2IDEuNTY5LTE4LjA1NyA0LjQzLTI2LjM5OCAxMS4yODUtMzIuODk3IDQyLjk4NS01Ny40NjcgODAuMTc5LTU3LjQ2NyA3LjQ4MSAwIDE0LjY4NS44ODQgMjEuNTE3IDIuNjQ4YTc3LjY2OCA3Ny42NjggMCAwIDEgMzMuNDI1IDE4LjI1bDQwLjgzNC0zOS43MTJjLTI0LjgzOS0yMi42MTYtNTcuMjE5LTM2LjMyLTk1Ljg0NC0zNi4zMi0zMC44NzggMC01OS4zODYgOS41NTMtODIuNzQ4IDI1LjctMTguOTQ1IDEzLjA5My0zNC40ODMgMzAuNjI1LTQ0Ljk3IDUwLjk4NS05Ljc1MyAxOC44NzktMTUuMDk0IDM5LjgtMTUuMDk0IDYyLjI5NCAwIDIyLjQ5NSA1LjM1IDQzLjYzMyAxNS4xMDMgNjIuMzM3di4xMjZjMTAuMzAyIDE5Ljg1NyAyNS4zNjggMzYuOTU0IDQzLjY3OCA0OS45ODggMTUuOTk3IDExLjM4NiA0NC42OCAyNi41NTEgODQuMDMxIDI2LjU1MSAyMi42MyAwIDQyLjY4Ny00LjA1MSA2MC4zNzUtMTEuNjQ0IDEyLjc2LTUuNDc4IDI0LjA2NS0xMi42MjIgMzQuMzAxLTIxLjgwNCAxMy41MjUtMTIuMTMyIDI0LjExNy0yNy4xMzkgMzEuMzQ3LTQ0LjQwNCA3LjIzLTE3LjI2NSAxMS4wOTctMzYuNzkgMTEuMDk3LTU3Ljk1NyAwLTkuODU4LS45OTgtMTkuODctMi42ODktMjguOTY4WiIvPjwvY2xpcFBhdGg+PC9kZWZzPjxnIGNsaXAtcGF0aD0idXJsKCNpKSIgdHJhbnNmb3JtPSJtYXRyaXgoLjk1NzkyIDAgMCAuOTg1MjUgLTkwLjE3NCAtNzguODU2KSI+PHBhdGggZmlsbD0idXJsKCNqKSIgZD0iTTkyLjA3NiAyMTkuOTU4Yy4xNDggMjIuMTQgNi41MDEgNDQuOTgzIDE2LjExNyA2My40MjR2LjEyN2M2Ljk0OSAxMy4zOTIgMTYuNDQ1IDIzLjk3IDI3LjI2IDM0LjQ1Mmw2NS4zMjctMjMuNjdjLTEyLjM2LTYuMjM1LTE0LjI0Ni0xMC4wNTUtMjMuMTA1LTE3LjAyNi05LjA1NC05LjA2Ni0xNS44MDItMTkuNDczLTIwLjAwNC0zMS42NzdoLS4xN2wuMTctLjEyN2MtMi43NjUtOC4wNTgtMy4wMzctMTYuNjEzLTMuMTQtMjUuNTAzWiIgZmlsdGVyPSJ1cmwoI2spIi8+PHBhdGggZmlsbD0idXJsKCNsKSIgZD0iTTIzNy4wODMgNzkuMDI1Yy02LjQ1NiAyMi41MjYtMy45ODggNDQuNDIxIDAgNTcuMTYxIDcuNDU3LjAwNiAxNC42NC44ODggMjEuNDUgMi42NDdhNzcuNjYyIDc3LjY2MiAwIDAgMSAzMy40MjQgMTguMjVsNDEuODgtNDAuNzI2Yy0yNC44MS0yMi41OS01NC42NjctMzcuMjk3LTk2Ljc1NC0zNy4zMzJaIiBmaWx0ZXI9InVybCgjaykiLz48cGF0aCBmaWxsPSJ1cmwoI20pIiBkPSJNMjM2Ljk0MyA3OC44NDdjLTMxLjY3IDAtNjAuOTEgOS43OTgtODQuODcxIDI2LjM1OWExNDUuNTMzIDE0NS41MzMgMCAwIDAtMjQuMzMyIDIxLjE1Yy0xLjkwNCAxNy43NDQgMTQuMjU3IDM5LjU1MSA0Ni4yNjIgMzkuMzcgMTUuNTI4LTE3LjkzNiAzOC40OTUtMjkuNTQyIDY0LjA1Ni0yOS41NDJsLjA3LjAwMi0xLjA0NC01Ny4zMzVjLS4wNDggMC0uMDkzLS4wMDQtLjE0LS4wMDRaIiBmaWx0ZXI9InVybCgjaykiLz48cGF0aCBmaWxsPSJ1cmwoI24pIiBkPSJtMzQxLjQ3NSAyMjYuMzc5LTI4LjI2OCAxOS4yODVjLTEuMjQgNy41NjItNC4wMjggMTUuMDAyLTguMTA3IDIxLjc4Ni00LjY3NCA3Ljc3Mi0xMC40NSAxMy42OS0xNi4zNzMgMTguMTk2LTE3LjcwMiAxMy40Ny0zOC4zMjggMTYuMjQ0LTUyLjY4NyAxNi4yNTUtMTQuODQyIDI1LjEwMi0xNy40NDQgMzcuNjc1IDEuMDQzIDU3LjkzNCAyMi44NzctLjAxNiA0My4xNTctNC4xMTcgNjEuMDQ2LTExLjc5NiAxMi45MzEtNS41NTEgMjQuMzg4LTEyLjc5MiAzNC43NjEtMjIuMDk3IDEzLjcwNi0xMi4yOTUgMjQuNDQyLTI3LjUwMyAzMS43NjktNDUgNy4zMjctMTcuNDk3IDExLjI0NS0zNy4yODIgMTEuMjQ1LTU4LjczNFoiIGZpbHRlcj0idXJsKCNrKSIvPjxwYXRoIGZpbGw9IiMzMDg2ZmYiIGQ9Ik0yMzQuOTk2IDE5MS4yMXY1Ny40OThoMTM2LjAwNmMxLjE5Ni03Ljg3NCA1LjE1Mi0xOC4wNjQgNS4xNTItMjYuNSAwLTkuODU4LS45OTYtMjEuODk5LTIuNjg3LTMwLjk5OFoiIGZpbHRlcj0idXJsKCNrKSIvPjxwYXRoIGZpbGw9InVybCgjbykiIGQ9Ik0xMjguMzkgMTI0LjMyN2MtOC4zOTQgOS4xMTktMTUuNTY0IDE5LjMyNi0yMS4yNDkgMzAuMzY0LTkuNzUzIDE4Ljg3OS0xNS4wOTQgNDEuODMtMTUuMDk0IDY0LjMyNCAwIC4zMTcuMDI2LjYyNy4wMjkuOTQ0IDQuMzIgOC4yMjQgNTkuNjY2IDYuNjQ5IDYyLjQ1NiAwLS4wMDQtLjMxLS4wMzktLjYxMy0uMDM5LS45MjQgMC05LjIyNiAxLjU3LTE2LjAyNiA0LjQzLTI0LjM2NyAzLjUzLTEwLjI4OSA5LjA1Ni0xOS43NjMgMTYuMTIzLTI3LjkyNiAxLjYwMi0yLjAzMSA1Ljg3NS02LjM5NyA3LjEyMS05LjAxNi40NzUtLjk5Ny0uODYyLTEuNTU3LS45MzctMS45MDgtLjA4My0uMzkzLTEuODc2LS4wNzctMi4yNzctLjM3LTEuMjc1LS45MjktMy44LTEuNDE0LTUuMzM0LTEuODQ1LTMuMjc3LS45MjEtOC43MDgtMi45NTMtMTEuNzI1LTUuMDYtOS41MzYtNi42NTgtMjQuNDE3LTE0LjYxMi0zMy41MDUtMjQuMjE2WiIgZmlsdGVyPSJ1cmwoI2spIi8+PHBhdGggZmlsbD0idXJsKCNwKSIgZD0iTTE2Mi4wOTkgMTU1Ljg1N2MyMi4xMTIgMTMuMzAxIDI4LjQ3MS02LjcxNCA0My4xNzMtMTIuOTc3bC0yNS41NzQtNTIuNjY0YTE0NC43NCAxNDQuNzQgMCAwIDAtMjYuNTQzIDE0LjUwNGMtMTIuMzE2IDguNTEyLTIzLjE5MiAxOC45LTMyLjE3NiAzMC43MloiIGZpbHRlcj0idXJsKCNxKSIvPjxwYXRoIGZpbGw9InVybCgjcikiIGQ9Ik0xNzEuMDk5IDI5MC4yMjJjLTI5LjY4MyAxMC42NDEtMzQuMzMgMTEuMDIzLTM3LjA2MiAyOS4yOWExNDQuODA2IDE0NC44MDYgMCAwIDAgMTYuNzkyIDEzLjk4NGMxNS45OTYgMTEuMzg2IDQ2Ljc2NiAyNi41NTEgODYuMTE4IDI2LjU1MS4wNDYgMCAuMDktLjAwNC4xMzctLjAwNHYtNTkuMTU3bC0uMDk0LjAwMmMtMTQuNzM2IDAtMjYuNTEyLTMuODQzLTM4LjU4NS0xMC41MjctMi45NzctMS42NDgtOC4zNzggMi43NzctMTEuMTIzLjc5OS0zLjc4Ni0yLjcyOS0xMi45IDIuMzUtMTYuMTgzLS45MzhaIiBmaWx0ZXI9InVybCgjaykiLz48cGF0aCBmaWxsPSJ1cmwoI3MpIiBkPSJNMjE5LjcgMjk5LjAyM3Y1OS45OTZjNS41MDYuNjQgMTEuMjM2IDEuMDI4IDE3LjI0NyAxLjAyOCA2LjAyNiAwIDExLjg1NS0uMzA3IDE3LjUyLS44NzJ2LTU5Ljc0OGExMDUuMTE5IDEwNS4xMTkgMCAwIDEtMTcuNDc3IDEuNDYxYy01LjkzMiAwLTExLjctLjY4Ni0xNy4yOS0xLjg2NVoiIGZpbHRlcj0idXJsKCNrKSIgb3BhY2l0eT0iLjUiLz48L2c+PC9zdmc+" width="14"><span data-edit-format="plain" data-edit-id="txt_table_header_google" data-edit-label="Table header: google" data-max-length="80" data-required="true">What Google Recommends</span></span></th>
+<th><span class="th-brand"><img alt="FOX One" class="brand-logo brand-logo--sm" height="12" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB3aWR0aD0iMzk2IiBoZWlnaHQ9Ijg4IiB2aWV3Qm94PSIwIDAgMzk2IDg4IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxnIGNsaXAtcGF0aD0idXJsKCNjbGlwMF81MjJfMTcwKSI+CiAgICA8cGF0aCBkPSJNMjQuNjUxOCAyMy45MzI0SDU0LjMwNzhMNTIuNjgwOCAwSDBWODcuNjk0MUgyNC42NTE4VjU5LjM5NjlINDguODEwNVYzNS40NjQ1SDI0LjY1MThWMjMuOTMyNFoiIHN0eWxlPSJmaWxsOiByZ2IoMCwgMCwgMCk7Ii8+CiAgICA8cGF0aCBkPSJNMTM2LjYyIDQzLjk3MUMxMzYuNjIgMjAuMjg2NyAxMTcuOTM0IDEuMjM5OTkgOTQuODg0NiAxLjIzOTk5QzcxLjgzNTIgMS4yMzk5OSA1My4yNzI1IDIwLjI4NjcgNTMuMjcyNSA0My45NzFDNTMuMjcyNSA2Ny42NTU0IDcxLjk1ODUgODYuNzAyMSA5NC44ODQ2IDg2LjcwMjFDMTE3LjgxMSA4Ni43MDIxIDEzNi42MiA2Ny42NTU0IDEzNi42MiA0My45NzFaTTEwMi41MDIgNjEuNTA0OUMxMDIuNTAyIDY1Ljc3MDYgOTkuMzk1OSA2OC44OTU0IDk1LjI3OTEgNjguODk1NEM5MS4xNjIyIDY4Ljg5NTQgODcuOTMyOCA2NS43NzA2IDg3LjkzMjggNjEuNTA0OVYyNi40MTI0Qzg3LjkzMjggMjIuMTQ2NyA5MS4wMzkgMTkuMDIxOSA5NS4xNTU4IDE5LjAyMTlDOTkuMjcyNyAxOS4wMjE5IDEwMi41MDIgMjIuMTQ2NyAxMDIuNTAyIDI2LjQxMjRWNjEuNTA0OVoiIHN0eWxlPSJmaWxsOiByZ2IoMCwgMCwgMCk7Ii8+CiAgICA8cGF0aCBkPSJNMjAwLjUxNyAwSDE3My40OTlMMTYzLjAyMiAxOS4wNDY3TDE1Mi45NCAwSDEyNC45MTFMMTQ5LjQ2NCA0Mi40ODNMMTIzLjU1NSA4Ny42OTQxSDE1MC42OTZMMTYyLjc3NiA2NS41MjI2TDE3NC44NTUgODcuNjk0MUgyMDIuNzYxTDE3Ni40ODIgNDIuMjEwMkwyMDAuNTE3IDBaIiBzdHlsZT0iZmlsbDogcmdiKDAsIDAsIDApOyIvPgogICAgPHBhdGggZD0iTTM1MC4xMDQgMEgyNDQuOTg5QzIxOC40NjQgMCAxOTkuMjg1IDE4LjQyNjcgMTk5LjI4NSA0My44NDcxQzE5OS4yODUgNjkuMjY3NSAyMTguNDY0IDg3LjY5NDEgMjQ0Ljk4OSA4Ny42OTQxSDM1MC4xMDRDMzc2LjYzIDg3LjY5NDEgMzk1LjgwOSA2OS4yNjc1IDM5NS44MDkgNDMuODQ3MUMzOTUuODA5IDE4LjQyNjcgMzc2LjYzIDAgMzUwLjEwNCAwWk0yNDYuNDkzIDcxLjU0OTFDMjMxLjE4NCA3MS41NDkxIDIyMi4yMTEgNjAuNjM2OSAyMjIuMjExIDQzLjk3MTFDMjIyLjIxMSAyNy4zMDUyIDIzMS4zMDcgMTYuMTQ1IDI0Ni40OTMgMTYuMTQ1QzI2MS42NzggMTYuMTQ1IDI3MC43NzUgMjcuMDU3MiAyNzAuNzc1IDQzLjk3MTFDMjcwLjc3NSA2MC44ODQ5IDI2MS44MDIgNzEuNTQ5MSAyNDYuNDkzIDcxLjU0OTFaTTMyMi4zNDYgNzAuOTA0M0gzMDguODg3TDI5MC4yIDM5LjA4NTRIMjg5LjgzMVY3MC45MDQzSDI3Ny41MDVWMTYuNzY1MUgyOTAuOTY1TDMwOS42NTEgNDguMzM1OUgzMTAuMDJWMTYuNzY1MUgzMjIuMzQ2VjcwLjkwNDNaTTM2Ny4zMTEgNzAuOTA0M0gzMzEuNTY2VjE2Ljc2NTFIMzY2LjY5NUwzNjcuOTUyIDI3LjkyNTJIMzQ0LjQxVjM4LjA2ODZIMzY1LjQ2MlY0OS4yMjg4SDM0NC40MVY1OS43NDQxSDM2OC41NjhMMzY3LjMxMSA3MC45MDQzWiIgc3R5bGU9ImZpbGw6IHJnYigwLCAwLCAwKTsiLz4KICAgIDxwYXRoIGQ9Ik0yNDYuNDkzIDI3LjY3NzJDMjQwLjM3OSAyNy42NzcyIDIzNy4wMjcgMzIuMDY2OSAyMzcuMDI3IDQwLjIwMTRWNDcuNDY3OUMyMzcuMDI3IDU1LjYwMjUgMjQwLjM3OSA1OS45OTIxIDI0Ni40OTMgNTkuOTkyMUMyNTIuNjA3IDU5Ljk5MjEgMjU1Ljk1OSA1NS42MDI1IDI1NS45NTkgNDcuNDY3OVY0MC4yMDE0QzI1NS45NTkgMzIuMDY2OSAyNTIuNjA3IDI3LjY3NzIgMjQ2LjQ5MyAyNy42NzcyWiIgc3R5bGU9ImZpbGw6IHJnYigwLCAwLCAwKTsiLz4KICA8L2c+CiAgPGRlZnM+CiAgICA8Y2xpcFBhdGggaWQ9ImNsaXAwXzUyMl8xNzAiPgogICAgICA8cmVjdCB3aWR0aD0iMzk1LjgwOSIgaGVpZ2h0PSI4Ny42OTQxIiBmaWxsPSJ3aGl0ZSIvPgogICAgPC9jbGlwUGF0aD4KICA8L2RlZnM+Cjwvc3ZnPg==" width="52"><span data-edit-format="plain" data-edit-id="txt_table_header_fox" data-edit-label="Table header: fox" data-max-length="80" data-required="true">What We're Doing</span></span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<div class="rec-cell">
+<div class="rec-icon"><i class="ph ph-house-line"></i></div>
+<div>
+<div class="rec-title" data-edit-format="plain" data-edit-id="txt_align_seo_fundamentals_title" data-edit-label="Alignment row title: Seo Fundamentals" data-max-length="80" data-required="true">SEO Fundamentals</div>
+<div class="rec-quote"><i class="ph ph-quotes"></i> <span data-edit-format="plain" data-edit-id="txt_align_seo_fundamentals_quote" data-edit-label="Google quote: seo fundamentals" data-max-length="500" data-required="true">"The best practices for SEO continue to be relevant because our generative AI features on Google Search are rooted in our core Search ranking and quality systems."</span></div>
+</div>
+</div>
+</td>
+<td class="fox-cell" data-edit-format="markdown-block" data-edit-id="md_fox_seo_fundamentals" data-edit-label="FOX explanation: seo fundamentals" data-max-length="900" data-required="true"><span>The SEO program is built on two pillars: </span><a data-edit-href-readonly="true" href="https://docs.google.com/document/d/1irXRF-UIIskBzZA5GoSVwJVQa475PsctvZofpZaL3NA/edit" rel="noopener" target="_blank">Compliance</a><span> (technical foundation) and </span><a data-edit-href-readonly="true" href="https://docs.google.com/document/d/1dpRHWlFlSNCybmVjMzhC-yVroP_M39stUShWmZXDToc/edit" rel="noopener" target="_blank">Optimization</a><span> (content and visibility), with AI search visibility treated as an outcome of sound SEO, not a separate discipline.</span></td>
+</tr>
+<tr id="align-technical-structure">
+<td>
+<div class="rec-cell">
+<div class="rec-icon"><i class="ph ph-wrench"></i></div>
+<div>
+<div class="rec-title" data-edit-format="plain" data-edit-id="txt_align_technical_structure_title" data-edit-label="Alignment row title: Technical Structure" data-max-length="80" data-required="true">Technical Structure</div>
+<div class="rec-quote"><i class="ph ph-quotes"></i> <span data-edit-format="plain" data-edit-id="txt_align_technical_structure_quote" data-edit-label="Google quote: technical structure" data-max-length="500" data-required="true">"To be eligible to be shown in generative AI features on Google Search, a page must be indexed and eligible to be shown in Google Search with a snippet, fulfilling the Search technical requirements."</span></div>
+</div>
+</div>
+</td>
+<td class="fox-cell" data-edit-format="markdown-block" data-edit-id="md_fox_technical_structure" data-edit-label="FOX explanation: technical structure" data-max-length="900" data-required="true"><a data-edit-href-readonly="true" href="https://dev-seo-validator.foxnews.com/bu-manager/fox-one" rel="noopener" target="_blank">Automated compliance validation</a><span>&nbsp;in place for indexability, snippet eligibility, and template-level QA. H1 compliance shipped across all major templates. Indexed URLs grew 10% MoM to 219K. Active work on canonical normalization, robots.txt, and OG tag standardization.</span></td>
+</tr>
+<tr>
+<td>
+<div class="rec-cell">
+<div class="rec-icon"><i class="ph ph-copy"></i></div>
+<div>
+<div class="rec-title" data-edit-format="plain" data-edit-id="txt_align_duplicate_content_title" data-edit-label="Alignment row title: Duplicate Content" data-max-length="80" data-required="true">Mitigate Duplicate Content</div>
+<div class="rec-quote"><i class="ph ph-quotes"></i> <span data-edit-format="plain" data-edit-id="txt_align_duplicate_content_quote" data-edit-label="Google quote: duplicate content" data-max-length="500" data-required="true">"Having duplicate content can be a bad user experience and search engines might waste crawling resources on URLs that you don't even care about."</span></div>
+</div>
+</div>
+</td>
+<td class="fox-cell" data-edit-format="markdown-block" data-edit-id="md_fox_duplicate_content" data-edit-label="FOX explanation: duplicate content" data-max-length="900" data-required="true"><span>Duplicate content has remained a core SEO consideration as new templates and programmatic pages are introduced. Recent analysis surfaced </span><strong>DMA-driven duplicate event pages</strong><span>, and we have already shared impact findings and canonical recommendations with product teams.</span></td>
+</tr>
+<tr>
+<td>
+<div class="rec-cell">
+<div class="rec-icon"><i class="ph ph-brackets-curly"></i></div>
+<div>
+<div class="rec-title" data-edit-format="plain" data-edit-id="txt_align_structured_data_title" data-edit-label="Alignment row title: Structured Data" data-max-length="80" data-required="true">Leveraging Structured Data</div>
+<div class="rec-quote"><i class="ph ph-quotes"></i> <span data-edit-format="plain" data-edit-id="txt_align_structured_data_quote" data-edit-label="Google quote: structured data" data-max-length="500" data-required="true">"Structured data isn't required for generative AI search, and there's no special schema.org markup you need to add. However, it's a good idea to continue using it as part of your overall SEO strategy, as it helps with being eligible for rich results on Google Search."</span></div>
+</div>
+</div>
+</td>
+<td class="fox-cell" data-edit-format="markdown-block" data-edit-id="md_fox_structured_data" data-edit-label="FOX explanation: structured data" data-max-length="900" data-required="true"><span>Implementing&nbsp;</span><strong>template-level JSON-LD structured data site-wide</strong><span> to improve each page type's visibility, context, and eligibility for richer search experiences not only in Google, but other search platforms as well, where it may be utilized more than traditional Google search.</span></td>
+</tr>
+<tr>
+<td>
+<div class="rec-cell">
+<div class="rec-icon"><i class="ph ph-trophy"></i></div>
+<div>
+<div class="rec-title" data-edit-format="plain" data-edit-id="txt_align_first_party_content_title" data-edit-label="Alignment row title: First Party Content" data-max-length="80" data-required="true">Non-Commodity, First-Party Content</div>
+<div class="rec-quote"><i class="ph ph-quotes"></i> <span data-edit-format="plain" data-edit-id="txt_align_first_party_content_quote" data-edit-label="Google quote: first party content" data-max-length="500" data-required="true">"For example, a first-hand review provides a unique perspective based on personal experience, whereas a summary of existing content simply restates information already available elsewhere."</span></div>
+</div>
+</div>
+</td>
+<td class="fox-cell" data-edit-format="markdown-block" data-edit-id="md_fox_first_party_content" data-edit-label="FOX explanation: first party content" data-max-length="900" data-required="true"><span>As a subscription streaming service, FOX One has </span><strong>first-party, rights-held content with a unique editorial perspective</strong><span> across the templates and events we support, exactly the type Google says matters most for long-term AI visibility.</span></td>
+</tr>
+<tr>
+<td>
+<div class="rec-cell">
+<div class="rec-icon"><i class="ph ph-signpost"></i></div>
+<div>
+<div class="rec-title" data-edit-format="plain" data-edit-id="txt_align_url_structure_title" data-edit-label="Alignment row title: Url Structure" data-max-length="80" data-required="true">URL Structure and Crawl Budget</div>
+<div class="rec-quote"><i class="ph ph-quotes"></i> <span data-edit-format="plain" data-edit-id="txt_align_url_structure_quote" data-edit-label="Google quote: url structure" data-max-length="500" data-required="true">"For very large and frequently updated sites, review our guide to optimizing your crawl budget."</span></div>
+</div>
+</div>
+</td>
+<td class="fox-cell" data-edit-format="markdown-block" data-edit-id="md_fox_url_structure" data-edit-label="FOX explanation: url structure" data-max-length="900" data-required="true"><p>We continue to recommend readable URL structures and clear path hierarchy, allowing Google to understand what each URL represents and how sports/entertainment content is organized throughout the FOX One web experience.</p></td>
+</tr>
+<tr>
+<td>
+<div class="rec-cell">
+<div class="rec-icon"><i class="ph ph-magnifying-glass"></i></div>
+<div>
+<div class="rec-title" data-edit-format="plain" data-edit-id="txt_align_user_intent_title" data-edit-label="Alignment row title: User Intent" data-max-length="80" data-required="true">Focus on User Intent</div>
+<div class="rec-quote"><i class="ph ph-quotes"></i> <span data-edit-format="plain" data-edit-id="txt_align_user_intent_quote" data-edit-label="Google quote: user intent" data-max-length="500" data-required="true">"While it might be tempting to create separate content for every possible variation of how people might search, doing so primarily to manipulate rankings or generative AI responses in Google Search violates Google's scaled content abuse spam policy."</span></div>
+</div>
+</div>
+</td>
+<td class="fox-cell" data-edit-format="markdown-block" data-edit-id="md_fox_user_intent" data-edit-label="FOX explanation: user intent" data-max-length="900" data-required="true"><p>As a premium subscription service, the SEO strategy has always been built around sports fan intent, shaping templates, copy, and recommendations around what users should expect from a premium streaming experience.</p></td>
+</tr>
+<tr>
+<td>
+<div class="rec-cell">
+<div class="rec-icon"><i class="ph ph-video-camera"></i></div>
+<div>
+<div class="rec-title" data-edit-format="plain" data-edit-id="txt_align_images_video_title" data-edit-label="Alignment row title: Images Video" data-max-length="80" data-required="true">Images and Video in AI Responses</div>
+<div class="rec-quote"><i class="ph ph-quotes"></i> <span data-edit-format="plain" data-edit-id="txt_align_images_video_quote" data-edit-label="Google quote: images video" data-max-length="500" data-required="true">"As with Google Search overall, our generative AI search features can bring in relevant images and video, which means more opportunities for your website to appear beyond web page links."</span></div>
+</div>
+</div>
+</td>
+<td class="fox-cell" data-edit-format="markdown-block" data-edit-id="md_fox_images_video" data-edit-label="FOX explanation: images video" data-max-length="900" data-required="true"><span>FOX One's premium video is subscription-gated, but we actively use Google broadcaster surfaces like </span><strong>OneBox</strong><span> (the boxed answer/information at the top of Google results) and </span><strong>Media Actions</strong><span> (Google's live/streaming broadcaster surface) to make sports, VOD, and TV content discoverable. Images are crawlable and supported across our infrastructure.</span></td>
+</tr>
+<tr>
+<td>
+<div class="rec-cell">
+<div class="rec-icon"><i class="ph ph-file-js"></i></div>
+<div>
+<div class="rec-title" data-edit-format="plain" data-edit-id="txt_align_javascript_seo_title" data-edit-label="Alignment row title: Javascript Seo" data-max-length="80" data-required="true">JavaScript SEO</div>
+<div class="rec-quote"><i class="ph ph-quotes"></i> <span data-edit-format="plain" data-edit-id="txt_align_javascript_seo_quote" data-edit-label="Google quote: javascript seo" data-max-length="500" data-required="true">"That said, working on SEO with a website that uses JavaScript frameworks is generally more complex than when working with other kinds of websites."</span></div>
+</div>
+</div>
+</td>
+<td class="fox-cell" data-edit-format="markdown-block" data-edit-id="md_fox_javascript_seo" data-edit-label="FOX explanation: javascript seo" data-max-length="900" data-required="true"><span>Since launch, SEO has partnered with web and product teams to reduce JavaScript dependency for core content. Our top recommendation has always been to prioritize </span><strong>SSR (Server-side rendered) content</strong><span> as the main implementation method. We are incrementally improving server-rendered links, page context, and key components so Google can reliably discover and crawl FOX One content.</span></td>
+</tr><tr>
+<td>
+<div class="rec-cell">
+<div class="rec-icon"><i class="ph ph-shield-check"></i></div>
+<div>
+<div class="rec-title" data-edit-format="plain" data-edit-id="txt_align_no_ai_hacks_title" data-edit-label="Alignment row title: No Ai Hacks" data-max-length="80" data-required="true">No AI-Specific "Hacks" Needed</div>
+<div class="rec-quote"><i class="ph ph-quotes"></i> <span data-edit-format="plain" data-edit-id="txt_align_no_ai_hacks_quote" data-edit-label="Google quote: no ai hacks" data-max-length="500" data-required="true">"For Google Search, you can ignore tactics like "chunking" content, creating unnecessary AI text files (like llms.txt), or pursuing inauthentic mentions."</span></div>
+</div>
+</div>
+</td>
+<td class="fox-cell" data-edit-format="markdown-block" data-edit-id="md_fox_no_ai_hacks" data-edit-label="FOX explanation: no ai hacks" data-max-length="900" data-required="true"><span>We haven't spent time on AI-specific shortcuts like content chunking, AI-tuned rewrites, or paid mentions. Google explicitly debunks all of these. That time has gone into foundational technical work instead.</span><br><br><span>Google says llms.txt files aren't needed for their search, but other AI platforms (Claude, Perplexity) do use them. They also recently confirmed at their 2026 Google I/O event that agents do leverage the llms.txt. We're evaluating it as an add for broader AI discoverability.</span></td>
+</tr>
+<tr>
+<td>
+<div class="rec-cell">
+<div class="rec-icon"><i class="ph ph-robot"></i></div>
+<div>
+<div class="rec-title" data-edit-format="plain" data-edit-id="txt_align_agentic_experiences_title" data-edit-label="Alignment row title: Agentic Experiences" data-max-length="80" data-required="true">Agentic Experiences (Browser Agents)</div>
+<div class="rec-quote"><i class="ph ph-quotes"></i> <span data-edit-format="plain" data-edit-id="txt_align_agentic_experiences_quote" data-edit-label="Google quote: agentic experiences" data-max-length="500" data-required="true">"For example, browser agents may access your website to gather the data they need to complete these tasks, such as analyzing visual renderings (like screenshots), inspecting the DOM structure, and interpreting the accessibility tree."</span></div>
+</div>
+</div>
+</td>
+<td class="fox-cell" data-edit-format="markdown-block" data-edit-id="md_fox_agentic_experiences" data-edit-label="FOX explanation: agentic experiences" data-max-length="900" data-required="true"><span>Google positions this as emerging and optional. Our existing focus on </span><strong>semantic HTML and accessibility compliance</strong><span> aligns with </span><a data-edit-href-readonly="true" href="https://web.dev/articles/ai-agent-site-ux" rel="noopener" target="_blank">Google's agent-friendly website guidance</a><span> on web.dev (stable layouts, semantic controls, and a machine-readable accessibility tree). Monitoring </span><a data-edit-href-readonly="true" href="https://ucp.dev/latest/specification/overview/" rel="noopener" target="_blank">Universal Commerce Protocol</a><span> (UCP), an emerging open protocol for AI agents to complete transactions on users behalf.</span></td>
+</tr>
+</tbody>
+</table>
+<section class="insights-section insights-section--agentic">
+<h2 class="section-heading" data-edit-format="plain" data-edit-id="txt_section_agentic_readiness" data-edit-label="Section heading: Agentic readiness" data-max-length="120" data-required="true">Agentic readiness, the new ceiling</h2>
+<article class="insight-card" data-edit-format="markdown-block" data-edit-group="Agentic readiness" data-edit-id="md_agentic_card_001" data-edit-label="Agentic readiness card 1" data-max-length="1800" data-required="true">
+<h3>Google's product team disagrees with Google's guidance team</h3>
+<p class="insight-lead">Four days after the AI Optimization Guide, Google announced Search Agents.</p>
+<p><span>Google introduced </span><a data-edit-href-readonly="true" href="https://blog.google/products-and-platforms/products/search/search-io-2026/" rel="noopener" target="_blank">Search Agents</a><span> at I/O 2026 on May 19. AI agents that run in the background, scanning blogs, news, social posts, and real-time data on finance, shopping, and sports to surface updates for subscribed users. Google's own launch example: "the instant any of your favorite pro athletes announce a sneaker collab." Search Agents launch first to AI Pro and Ultra subscribers this summer.</span></p>
+<p>This is a new publisher visibility surface the May 15 guide does not address. The data Search Agents read is structured, time-bound, and fresh. That is exactly what FOX One's event pages, schema layer, and unified schedule pipeline already produce. The gap to close is making sure that data is exposed in formats agents can consume.</p>
+</article>
+<article class="insight-card" data-edit-format="markdown-block" data-edit-group="Agentic readiness" data-edit-id="md_agentic_card_002" data-edit-label="Agentic readiness card 2" data-max-length="1800" data-required="true">
+<h3>Google's own tooling now scores agent readiness</h3>
+<p class="insight-lead">Chrome added a measurable Agentic Browsing category to Lighthouse on May 5.</p>
+<p><span>Two weeks before the AI Optimization Guide published, Chrome added a new&nbsp;</span><a data-edit-href-readonly="true" href="https://developer.chrome.com/docs/lighthouse/agentic-browsing/scoring" rel="noopener" target="_blank">Agentic Browsing audit category</a><span>&nbsp;to Lighthouse, the same tool that scores Performance, Accessibility, and SEO. It evaluates four signals:</span></p>
+<ul class="insight-list">
+<li>WebMCP. An API that exposes a site's logic and forms to AI agents (declarative HTML or imperative JS).</li>
+<li>Agent-centric accessibility. Names, labels, tree integrity, and visibility in the accessibility tree, which is the machine-eye view of a page.</li>
+<li>Layout stability (CLS). Agents fail when elements move between identification and interaction.</li>
+<li>llms.txt. A machine-readable site summary at the domain root.</li>
+</ul>
+<p><b>None of these signals appear in the May 15 guide. All four appear in Google's official audit tool. This is the operational definition of the agentic ceiling. Written by Google, for Google's own browser, before Google's public guidance acknowledged any of it.</b></p>
+</article>
+<article class="insight-card" data-edit-format="markdown-block" data-edit-group="Agentic readiness" data-edit-id="md_agentic_card_003" data-edit-label="Agentic readiness card 3" data-max-length="1800" data-required="true">
+<h3>The architecture behind AI Mode has been in Google's patents since 2018</h3>
+<p class="insight-lead">A single AI Mode query triggers 5–20 sub-queries, each retrieving and grading sources independently</p>
+<p>Five patents map directly to the agentic RAG architecture running inside AI Mode today:</p>
+<ul class="insight-list">
+<li><strong>Query decomposition and fan-out</strong> (<a data-edit-href-readonly="true" href="https://patents.google.com/patent/US11663201B2/en" rel="noopener" target="_blank">US11663201B2</a>, filed 2018)</li>
+<li><strong>Routing among retrieval sources</strong> (<a data-edit-href-readonly="true" href="https://patents.google.com/patent/US20240362093A1/en" rel="noopener" target="_blank">US20240362093A1</a>, 2024)</li>
+<li><strong>Stateful chat memory</strong> (<a data-edit-href-readonly="true" href="https://patents.google.com/patent/US20240289407A1/en" rel="noopener" target="_blank">US20240289407A1</a>, 2024)</li>
+<li><strong>Pairwise passage ranking</strong> (<a data-edit-href-readonly="true" href="https://patents.google.com/patent/US20250124067A1/en" rel="noopener" target="_blank">US20250124067A1</a>, 2024)</li>
+<li><strong>Generative answer synthesis</strong> (<a data-edit-href-readonly="true" href="https://patents.google.com/patent/US11769017B1/en" rel="noopener" target="_blank">US11769017B1</a>, 2023)</li>
+</ul>
+<p><strong>What this means operationally:</strong> Indexing is the floor, not the win. You also need broad topic coverage, self-contained passages that beat competitors in pairwise ranking, and freshness signals the system can verify.</p>
+<div aria-label="AI Mode pipeline: one query fans out to sub-queries, retrieval, pairwise ranking, critic, then answer" class="ai-mode-flow" role="img">
+<div class="ai-mode-flow__step">
+<span class="ai-mode-flow__label">1</span>
+<strong>User query</strong>
+</div>
+<span aria-hidden="true" class="ai-mode-flow__arrow">→</span>
+<div class="ai-mode-flow__step ai-mode-flow__step--fanout">
+<span class="ai-mode-flow__label">2</span>
+<strong>Fan-out</strong>
+<span class="ai-mode-flow__detail">5–20 sub-queries</span>
+</div>
+<span aria-hidden="true" class="ai-mode-flow__arrow">→</span>
+<div class="ai-mode-flow__step">
+<span class="ai-mode-flow__label">3</span>
+<strong>Retrieve</strong>
+<span class="ai-mode-flow__detail">passages each</span>
+</div>
+<span aria-hidden="true" class="ai-mode-flow__arrow">→</span>
+<div class="ai-mode-flow__step">
+<span class="ai-mode-flow__label">4</span>
+<strong>Pairwise rank</strong>
+<span class="ai-mode-flow__detail">head-to-head</span>
+</div>
+<span aria-hidden="true" class="ai-mode-flow__arrow">→</span>
+<div class="ai-mode-flow__step">
+<span class="ai-mode-flow__label">5</span>
+<strong>Critic</strong>
+<span class="ai-mode-flow__detail">freshness &amp; conflicts</span>
+</div>
+<span aria-hidden="true" class="ai-mode-flow__arrow">→</span>
+<div class="ai-mode-flow__step ai-mode-flow__step--out">
+<span class="ai-mode-flow__label">6</span>
+<strong>Answer built</strong>
+</div>
+</div>
+</article>
+<article class="insight-card" data-edit-format="markdown-block" data-edit-group="Agentic readiness" data-edit-id="md_agentic_card_004" data-edit-label="Agentic readiness card 4" data-max-length="1800" data-required="true">
+<h3>What this means for FOX One</h3>
+<p class="insight-lead">Where the program already meets the ceiling, and what's next.</p>
+<div class="translation-grid">
+<div>
+<h4>Already aligned</h4>
+<ul class="insight-list">
+<li><strong>Structured data</strong> on event and program templates: the input Search Agents consume for live monitoring. Continue.</li>
+<li><strong>Technical Structure</strong>: automated compliance validation, indexability, snippet eligibility, and template-level QA in place; robots.txt, OG tags, and URL hygiene still in active rollout. Continue.</li>
+<li><strong>H1 compliance, snippet eligibility, indexability</strong>: the floor. Shipped on major templates.</li>
+<li><strong>CLS under Web Vitals</strong>: already tracked; next step is agent-readiness framing in Compliance reporting.</li>
+</ul>
+</div>
+<div>
+<h4>Under evaluation</h4>
+<ul class="insight-list">
+<li><strong>llms.txt</strong> at the domain root: machine-readable site summary tied to Google's Agentic Browsing audit. Compliance roadmap.</li>
+<li><strong>Agent-centric accessibility checks</strong>: names, labels, tree integrity, and visibility against Lighthouse's Agentic Browsing criteria. Compliance Tier 2.</li>
+<li><strong>Freshness signaling</strong> on schedule and time-bound pages: "as of [date]" framing, accurate <code>dateModified</code>, version stamps.</li>
+<li><strong>WebMCP and tool surfaces</strong>: longer-horizon review of APIs and structured endpoints agents can call instead of parsing prose.</li>
+</ul>
+</div>
+</div>
+</article>
+</section>
+</section>
+<section class="contradictions-section">
+<h2 class="section-heading" data-edit-format="plain" data-edit-id="txt_section_contradictions" data-edit-label="Section heading: Contradictions" data-max-length="120" data-required="true">Considerable Contradictions</h2>
+<div class="callout callout--section"><i class="ph ph-lightbulb"></i><p data-edit-format="markdown-block" data-edit-id="md_contradictions_intro" data-edit-label="Contradictions intro callout" data-max-length="600"><span>Microsoft published their </span><a data-edit-href-readonly="true" href="https://about.ads.microsoft.com/en/blog/post/october-2025/optimizing-your-content-for-inclusion-in-ai-search-answers" rel="noopener" target="_blank">AI search optimization guide</a><span> in October 2025. Google's guide, published seven months later, explicitly debunks several practices Microsoft recommends.</span></p></div>
+<article class="contradiction-card">
+<h3 class="contradiction-title" data-edit-format="plain" data-edit-id="txt_contra_content_chunking_title" data-edit-label="Contradiction title: content chunking" data-max-length="120" data-required="true">Content chunking for AI</h3>
+<div class="stance-grid">
+<p class="stance stance-col--google" data-edit-format="markdown-block" data-edit-id="md_stance_content_chunking_google" data-edit-label="Stance: content chunking (google)" data-max-length="600" data-required="true"><span class="stance-label stance-label--logo stance-label--google"><img alt="Google" height="16" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNzIgOTIiIHdpZHRoPSIyNzIiIGhlaWdodD0iOTIiPgogICAgPHBhdGggZmlsbD0iI0VBNDMzNSIgZD0iTTExNS43NSA0Ny4xOGMwIDEyLjc3LTkuOTkgMjIuMTgtMjIuMjUgMjIuMThzLTIyLjI1LTkuNDEtMjIuMjUtMjIuMThDNzEuMjUgMzQuMzIgODEuMjQgMjUgOTMuNSAyNXMyMi4yNSA5LjMyIDIyLjI1IDIyLjE4em0tOS43NCAwYzAtNy45OC01Ljc5LTEzLjQ0LTEyLjUxLTEzLjQ0UzgwLjk5IDM5LjIgODAuOTkgNDcuMThjMCA3LjkgNS43OSAxMy40NCAxMi41MSAxMy40NHMxMi41MS01LjU1IDEyLjUxLTEzLjQ0eiIvPgogICAgPHBhdGggZmlsbD0iI0ZCQkMwNSIgZD0iTTE2My43NSA0Ny4xOGMwIDEyLjc3LTkuOTkgMjIuMTgtMjIuMjUgMjIuMThzLTIyLjI1LTkuNDEtMjIuMjUtMjIuMThjMC0xMi44NSA5Ljk5LTIyLjE4IDIyLjI1LTIyLjE4czIyLjI1IDkuMzIgMjIuMjUgMjIuMTh6bS05Ljc0IDBjMC03Ljk4LTUuNzktMTMuNDQtMTIuNTEtMTMuNDRzLTEyLjUxIDUuNDYtMTIuNTEgMTMuNDRjMCA3LjkgNS43OSAxMy40NCAxMi41MSAxMy40NHMxMi41MS01LjU1IDEyLjUxLTEzLjQ0eiIvPgogICAgPHBhdGggZmlsbD0iIzQyODVGNCIgZD0iTTIwOS43NSAyNi4zNHYzOS44MmMwIDE2LjM4LTkuNjYgMjMuMDctMjEuMDggMjMuMDctMTAuNzUgMC0xNy4yMi03LjE5LTE5LjY2LTEzLjA3bDguNDgtMy41M2MxLjUxIDMuNjEgNS4yMSA3Ljg3IDExLjE3IDcuODcgNy4zMSAwIDExLjg0LTQuNTEgMTEuODQtMTN2LTMuMTloLS4zNGMtMi4xOCAyLjY5LTYuMzggNS4wNC0xMS42OCA1LjA0LTExLjA5IDAtMjEuMjUtOS42Ni0yMS4yNS0yMi4wOSAwLTEyLjUyIDEwLjE2LTIyLjI2IDIxLjI1LTIyLjI2IDUuMjkgMCA5LjQ5IDIuMzUgMTEuNjggNC45NmguMzR2LTMuNjFoOS4yNXptLTguNTYgMjAuOTJjMC03LjgxLTUuMjEtMTMuNTItMTEuODQtMTMuNTItNi43MiAwLTEyLjM1IDUuNzEtMTIuMzUgMTMuNTIgMCA3LjczIDUuNjMgMTMuMzYgMTIuMzUgMTMuMzYgNi42MyAwIDExLjg0LTUuNjMgMTEuODQtMTMuMzZ6Ii8+CiAgICA8cGF0aCBmaWxsPSIjMzRBODUzIiBkPSJNMjI1IDN2NjVoLTkuNVYzaDkuNXoiLz4KICAgIDxwYXRoIGZpbGw9IiNFQTQzMzUiIGQ9Ik0yNjIuMDIgNTQuNDhsNy41NiA1LjA0Yy0yLjQ0IDMuNjEtOC4zMiA5LjgzLTE4LjQ4IDkuODMtMTIuNiAwLTIyLjAxLTkuNzQtMjIuMDEtMjIuMTggMC0xMy4xOSA5LjQ5LTIyLjE4IDIwLjkyLTIyLjE4IDExLjUxIDAgMTcuMTQgOS4xNiAxOC45OCAxNC4xMWwxLjAxIDIuNTItMjkuNjUgMTIuMjhjMi4yNyA0LjQ1IDUuOCA2LjcyIDEwLjc1IDYuNzIgNC45NiAwIDguNC0yLjQ0IDEwLjkyLTYuMTR6bS0yMy4yNy03Ljk4bDE5LjgyLTguMjNjLTEuMDktMi43Ny00LjM3LTQuNy04LjIzLTQuNy00Ljk1IDAtMTEuODQgNC4zNy0xMS41OSAxMi45M3oiLz4KICAgIDxwYXRoIGZpbGw9IiM0Mjg1RjQiIGQ9Ik0zNS4yOSA0MS40MVYzMkg2N2MuMzEgMS42NC40NyAzLjU4LjQ3IDUuNjggMCA3LjA2LTEuOTMgMTUuNzktOC4xNSAyMi4wMS02LjA1IDYuMy0xMy43OCA5LjY2LTI0LjAyIDkuNjZDMTYuMzIgNjkuMzUuMzYgNTMuODkuMzYgMzQuOTEuMzYgMTUuOTMgMTYuMzIuNDcgMzUuMy40N2MxMC41IDAgMTcuOTggNC4xMiAyMy42IDkuNDlsLTYuNjQgNi42NGMtNC4wMy0zLjc4LTkuNDktNi43Mi0xNi45Ny02LjcyLTEzLjg2IDAtMjQuNyAxMS4xNy0yNC43IDI1LjAzIDAgMTMuODYgMTAuODQgMjUuMDMgMjQuNyAyNS4wMyA4Ljk5IDAgMTQuMTEtMy42MSAxNy4zOS02Ljg5IDIuNjYtMi42NiA0LjQxLTYuNDYgNS4xLTExLjY1bC0yMi40OS4wMXoiLz4KPC9zdmc+Cg==" width="58"></span><br><span>Explicitly debunked. Google says there is no need to break content into small pieces; its systems understand nuance across full pages. Listed as a myth in the May 2026 guide.</span></p>
+<p class="stance" data-edit-format="markdown-block" data-edit-id="md_stance_content_chunking_microsoft" data-edit-label="Stance: content chunking (microsoft)" data-max-length="600" data-required="true"><span class="stance-label stance-label--logo stance-label--microsoft"><img alt="Microsoft" height="16" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDMzNy42IDcyIj4KPHBhdGggZmlsbD0iIzczNzM3MyIgZD0iTTE0MC40LDE0LjR2NDMuMmgtNy41VjIzLjdoLTAuMWwtMTMuNCwzMy45aC01bC0xMy43LTMzLjloLTAuMXYzMy45aC02LjlWMTQuNGgxMC44bDEyLjQsMzJoMC4ybDEzLjEtMzJIMTQwLjQgeiBNMTQ2LjYsMTcuN2MwLTEuMiwwLjQtMi4yLDEuMy0zYzAuOS0wLjgsMS45LTEuMiwzLjEtMS4yYzEuMywwLDIuNCwwLjQsMy4yLDEuMnMxLjMsMS44LDEuMywzYzAsMS4yLTAuNCwyLjItMS4zLDMgYy0wLjksMC44LTEuOSwxLjItMy4yLDEuMnMtMi4zLTAuNC0zLjEtMS4yQzE0Ny4xLDE5LjgsMTQ2LjYsMTguOCwxNDYuNiwxNy43eiBNMTU0LjcsMjYuNnYzMWgtNy4zdi0zMUgxNTQuN3ogTTE3Ni44LDUyLjMgYzEuMSwwLDIuMy0wLjIsMy42LTAuOGMxLjMtMC41LDIuNS0xLjIsMy42LTJ2Ni44Yy0xLjIsMC43LTIuNSwxLjItNCwxLjVjLTEuNSwwLjMtMy4xLDAuNS00LjksMC41Yy00LjYsMC04LjMtMS40LTExLjEtNC4zIGMtMi45LTIuOS00LjMtNi42LTQuMy0xMWMwLTUsMS41LTkuMSw0LjQtMTIuM2MyLjktMy4yLDctNC44LDEyLjQtNC44YzEuNCwwLDIuOCwwLjIsNC4xLDAuNWMxLjQsMC4zLDIuNSwwLjgsMy4zLDEuMnY3IGMtMS4xLTAuOC0yLjMtMS41LTMuNC0xLjljLTEuMi0wLjQtMi40LTAuNy0zLjYtMC43Yy0yLjksMC01LjIsMC45LTcsMi44cy0yLjYsNC40LTIuNiw3LjZjMCwzLjEsMC45LDUuNiwyLjYsNy4zIEMxNzEuNiw1MS40LDE3My45LDUyLjMsMTc2LjgsNTIuM3ogTTIwNC43LDI2LjFjMC42LDAsMS4xLDAsMS42LDAuMXMwLjksMC4yLDEuMiwwLjN2Ny40Yy0wLjQtMC4zLTAuOS0wLjYtMS43LTAuOCBzLTEuNi0wLjQtMi43LTAuNGMtMS44LDAtMy4zLDAuOC00LjUsMi4zcy0xLjksMy44LTEuOSw3djE1LjZoLTcuM3YtMzFoNy4zdjQuOWgwLjFjMC43LTEuNywxLjctMywzLTQgQzIwMS4yLDI2LjYsMjAyLjgsMjYuMSwyMDQuNywyNi4xeiBNMjA3LjksNDIuNmMwLTUuMSwxLjUtOS4yLDQuMy0xMi4yYzIuOS0zLDYuOS00LjUsMTItNC41YzQuOCwwLDguNiwxLjQsMTEuMyw0LjMgczQuMSw2LjgsNC4xLDExLjdjMCw1LTEuNSw5LTQuMywxMmMtMi45LDMtNi44LDQuNS0xMS44LDQuNWMtNC44LDAtOC42LTEuNC0xMS40LTQuMkMyMDkuMyw1MS4zLDIwNy45LDQ3LjQsMjA3LjksNDIuNnogTTIxNS41LDQyLjNjMCwzLjIsMC43LDUuNywyLjIsNy40czMuNiwyLjYsNi4zLDIuNmMyLjYsMCw0LjctMC44LDYuMS0yLjZjMS40LTEuNywyLjEtNC4yLDIuMS03LjZjMC0zLjMtMC43LTUuOC0yLjEtNy42IGMtMS40LTEuNy0zLjUtMi42LTYtMi42Yy0yLjcsMC00LjcsMC45LTYuMiwyLjdDMjE2LjIsMzYuNSwyMTUuNSwzOSwyMTUuNSw0Mi4zeiBNMjUwLjUsMzQuOGMwLDEsMC4zLDEuOSwxLDIuNSBjMC43LDAuNiwyLjEsMS4zLDQuNCwyLjJjMi45LDEuMiw1LDIuNSw2LjEsMy45YzEuMiwxLjUsMS44LDMuMiwxLjgsNS4zYzAsMi45LTEuMSw1LjItMy40LDdjLTIuMiwxLjgtNS4zLDIuNi05LjEsMi42IGMtMS4zLDAtMi43LTAuMi00LjMtMC41Yy0xLjYtMC4zLTIuOS0wLjctNC0xLjJ2LTcuMmMxLjMsMC45LDIuOCwxLjcsNC4zLDIuMmMxLjUsMC41LDIuOSwwLjgsNC4yLDAuOGMxLjYsMCwyLjktMC4yLDMuNi0wLjcgYzAuOC0wLjUsMS4yLTEuMiwxLjItMi4zYzAtMS0wLjQtMS44LTEuMi0yLjZjLTAuOC0wLjctMi40LTEuNS00LjYtMi40Yy0yLjctMS4xLTQuNi0yLjQtNS43LTMuOHMtMS43LTMuMi0xLjctNS40IGMwLTIuOCwxLjEtNS4xLDMuMy02LjljMi4yLTEuOCw1LjEtMi43LDguNi0yLjdjMS4xLDAsMi4zLDAuMSwzLjYsMC40czIuNSwwLjYsMy40LDAuOVYzNGMtMS0wLjYtMi4xLTEuMi0zLjQtMS43IGMtMS4zLTAuNS0yLjYtMC43LTMuOC0wLjdjLTEuNCwwLTIuNSwwLjMtMy4yLDAuOEMyNTAuOSwzMy4xLDI1MC41LDMzLjgsMjUwLjUsMzQuOHogTTI2Ni45LDQyLjZjMC01LjEsMS41LTkuMiw0LjMtMTIuMiBjMi45LTMsNi45LTQuNSwxMi00LjVjNC44LDAsOC42LDEuNCwxMS4zLDQuM3M0LjEsNi44LDQuMSwxMS43YzAsNS0xLjUsOS00LjMsMTJjLTIuOSwzLTYuOCw0LjUtMTEuOCw0LjVjLTQuOCwwLTguNi0xLjQtMTEuNC00LjIgQzI2OC40LDUxLjMsMjY2LjksNDcuNCwyNjYuOSw0Mi42eiBNMjc0LjUsNDIuM2MwLDMuMiwwLjcsNS43LDIuMiw3LjRzMy42LDIuNiw2LjMsMi42YzIuNiwwLDQuNy0wLjgsNi4xLTIuNiBjMS40LTEuNywyLjEtNC4yLDIuMS03LjZjMC0zLjMtMC43LTUuOC0yLjEtNy42Yy0xLjQtMS43LTMuNS0yLjYtNi0yLjZjLTIuNywwLTQuNywwLjktNi4yLDIuN0MyNzUuMywzNi41LDI3NC41LDM5LDI3NC41LDQyLjN6IE0zMjIuOSwzMi42aC0xMC45djI1aC03LjR2LTI1aC01LjJ2LTZoNS4ydi00LjNjMC0zLjIsMS4xLTUuOSwzLjItOHM0LjgtMy4xLDguMS0zLjFjMC45LDAsMS43LDAuMSwyLjQsMC4xczEuMywwLjIsMS44LDAuNHY2LjMgYy0wLjItMC4xLTAuNy0wLjMtMS4zLTAuNWMtMC42LTAuMi0xLjMtMC4zLTIuMS0wLjNjLTEuNSwwLTIuNywwLjUtMy41LDEuNGMtMC44LDAuOS0xLjIsMi40LTEuMiw0LjJ2My43aDEwLjl2LTdsNy4zLTIuMnY5LjJoNy40IHY2aC03LjR2MTQuNWMwLDEuOSwwLjQsMy4yLDEsNGMwLjcsMC44LDEuOCwxLjIsMy4zLDEuMmMwLjQsMCwwLjktMC4xLDEuNS0wLjNjMC42LTAuMiwxLjEtMC40LDEuNS0wLjd2NmMtMC41LDAuMy0xLjIsMC41LTIuMywwLjcgYy0xLjEsMC4yLTIuMSwwLjMtMy4yLDAuM2MtMy4xLDAtNS40LTAuOC02LjktMi40Yy0xLjUtMS42LTIuMy00LjEtMi4zLTcuNEwzMjIuOSwzMi42TDMyMi45LDMyLjZ6Ii8+CjxyZWN0IGZpbGw9IiNGMjUwMjIiIHdpZHRoPSIzNC4yIiBoZWlnaHQ9IjM0LjIiLz4KPHJlY3QgeD0iMzcuOCIgZmlsbD0iIzdGQkEwMCIgd2lkdGg9IjM0LjIiIGhlaWdodD0iMzQuMiIvPgo8cmVjdCB5PSIzNy44IiBmaWxsPSIjMDBBNEVGIiB3aWR0aD0iMzQuMiIgaGVpZ2h0PSIzNC4yIi8+CjxyZWN0IHg9IjM3LjgiIHk9IjM3LjgiIGZpbGw9IiNGRkI5MDAiIHdpZHRoPSIzNC4yIiBoZWlnaHQ9IjM0LjIiLz4KPC9zdmc+Cg==" width="72"></span><br><span>Core to their framework. Copilot and Bing-powered assistants parse content into modular pieces for ranking and assembly into answers. Microsoft encourages chunk-friendly formatting (headings, Q&amp;A blocks, lists).</span></p>
+</div>
+<p class="stance stance--fox" data-edit-format="markdown-block" data-edit-id="md_stance_content_chunking_fox" data-edit-label="Stance: content chunking (fox)" data-max-length="600" data-required="true"><span class="stance-label stance-label--logo stance-label--fox"><img alt="FOX One" height="13" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB3aWR0aD0iMzk2IiBoZWlnaHQ9Ijg4IiB2aWV3Qm94PSIwIDAgMzk2IDg4IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxnIGNsaXAtcGF0aD0idXJsKCNjbGlwMF81MjJfMTcwKSI+CiAgICA8cGF0aCBkPSJNMjQuNjUxOCAyMy45MzI0SDU0LjMwNzhMNTIuNjgwOCAwSDBWODcuNjk0MUgyNC42NTE4VjU5LjM5NjlINDguODEwNVYzNS40NjQ1SDI0LjY1MThWMjMuOTMyNFoiIHN0eWxlPSJmaWxsOiByZ2IoMCwgMCwgMCk7Ii8+CiAgICA8cGF0aCBkPSJNMTM2LjYyIDQzLjk3MUMxMzYuNjIgMjAuMjg2NyAxMTcuOTM0IDEuMjM5OTkgOTQuODg0NiAxLjIzOTk5QzcxLjgzNTIgMS4yMzk5OSA1My4yNzI1IDIwLjI4NjcgNTMuMjcyNSA0My45NzFDNTMuMjcyNSA2Ny42NTU0IDcxLjk1ODUgODYuNzAyMSA5NC44ODQ2IDg2LjcwMjFDMTE3LjgxMSA4Ni43MDIxIDEzNi42MiA2Ny42NTU0IDEzNi42MiA0My45NzFaTTEwMi41MDIgNjEuNTA0OUMxMDIuNTAyIDY1Ljc3MDYgOTkuMzk1OSA2OC44OTU0IDk1LjI3OTEgNjguODk1NEM5MS4xNjIyIDY4Ljg5NTQgODcuOTMyOCA2NS43NzA2IDg3LjkzMjggNjEuNTA0OVYyNi40MTI0Qzg3LjkzMjggMjIuMTQ2NyA5MS4wMzkgMTkuMDIxOSA5NS4xNTU4IDE5LjAyMTlDOTkuMjcyNyAxOS4wMjE5IDEwMi41MDIgMjIuMTQ2NyAxMDIuNTAyIDI2LjQxMjRWNjEuNTA0OVoiIHN0eWxlPSJmaWxsOiByZ2IoMCwgMCwgMCk7Ii8+CiAgICA8cGF0aCBkPSJNMjAwLjUxNyAwSDE3My40OTlMMTYzLjAyMiAxOS4wNDY3TDE1Mi45NCAwSDEyNC45MTFMMTQ5LjQ2NCA0Mi40ODNMMTIzLjU1NSA4Ny42OTQxSDE1MC42OTZMMTYyLjc3NiA2NS41MjI2TDE3NC44NTUgODcuNjk0MUgyMDIuNzYxTDE3Ni40ODIgNDIuMjEwMkwyMDAuNTE3IDBaIiBzdHlsZT0iZmlsbDogcmdiKDAsIDAsIDApOyIvPgogICAgPHBhdGggZD0iTTM1MC4xMDQgMEgyNDQuOTg5QzIxOC40NjQgMCAxOTkuMjg1IDE4LjQyNjcgMTk5LjI4NSA0My44NDcxQzE5OS4yODUgNjkuMjY3NSAyMTguNDY0IDg3LjY5NDEgMjQ0Ljk4OSA4Ny42OTQxSDM1MC4xMDRDMzc2LjYzIDg3LjY5NDEgMzk1LjgwOSA2OS4yNjc1IDM5NS44MDkgNDMuODQ3MUMzOTUuODA5IDE4LjQyNjcgMzc2LjYzIDAgMzUwLjEwNCAwWk0yNDYuNDkzIDcxLjU0OTFDMjMxLjE4NCA3MS41NDkxIDIyMi4yMTEgNjAuNjM2OSAyMjIuMjExIDQzLjk3MTFDMjIyLjIxMSAyNy4zMDUyIDIzMS4zMDcgMTYuMTQ1IDI0Ni40OTMgMTYuMTQ1QzI2MS42NzggMTYuMTQ1IDI3MC43NzUgMjcuMDU3MiAyNzAuNzc1IDQzLjk3MTFDMjcwLjc3NSA2MC44ODQ5IDI2MS44MDIgNzEuNTQ5MSAyNDYuNDkzIDcxLjU0OTFaTTMyMi4zNDYgNzAuOTA0M0gzMDguODg3TDI5MC4yIDM5LjA4NTRIMjg5LjgzMVY3MC45MDQzSDI3Ny41MDVWMTYuNzY1MUgyOTAuOTY1TDMwOS42NTEgNDguMzM1OUgzMTAuMDJWMTYuNzY1MUgzMjIuMzQ2VjcwLjkwNDNaTTM2Ny4zMTEgNzAuOTA0M0gzMzEuNTY2VjE2Ljc2NTFIMzY2LjY5NUwzNjcuOTUyIDI3LjkyNTJIMzQ0LjQxVjM4LjA2ODZIMzY1LjQ2MlY0OS4yMjg4SDM0NC40MVY1OS43NDQxSDM2OC41NjhMMzY3LjMxMSA3MC45MDQzWiIgc3R5bGU9ImZpbGw6IHJnYigwLCAwLCAwKTsiLz4KICAgIDxwYXRoIGQ9Ik0yNDYuNDkzIDI3LjY3NzJDMjQwLjM3OSAyNy42NzcyIDIzNy4wMjcgMzIuMDY2OSAyMzcuMDI3IDQwLjIwMTRWNDcuNDY3OUMyMzcuMDI3IDU1LjYwMjUgMjQwLjM3OSA1OS45OTIxIDI0Ni40OTMgNTkuOTkyMUMyNTIuNjA3IDU5Ljk5MjEgMjU1Ljk1OSA1NS42MDI1IDI1NS45NTkgNDcuNDY3OVY0MC4yMDE0QzI1NS45NTkgMzIuMDY2OSAyNTIuNjA3IDI3LjY3NzIgMjQ2LjQ5MyAyNy42NzcyWiIgc3R5bGU9ImZpbGw6IHJnYigwLCAwLCAwKTsiLz4KICA8L2c+CiAgPGRlZnM+CiAgICA8Y2xpcFBhdGggaWQ9ImNsaXAwXzUyMl8xNzAiPgogICAgICA8cmVjdCB3aWR0aD0iMzk1LjgwOSIgaGVpZ2h0PSI4Ny42OTQxIiBmaWxsPSJ3aGl0ZSIvPgogICAgPC9jbGlwUGF0aD4KICA8L2RlZnM+Cjwvc3ZnPg==" width="56"></span><br><span>Continue to recommend clear heading hierarchy and semantic structure for human readability. That satisfies Microsoft's parsing model without the artificial chunking Google debunks.</span></p>
+</article>
+<article class="contradiction-card">
+<h3 class="contradiction-title" data-edit-format="plain" data-edit-id="txt_contra_schema_markup_title" data-edit-label="Contradiction title: schema markup" data-max-length="120" data-required="true">Schema markup for AI features</h3>
+<div class="stance-grid">
+<p class="stance stance-col--google" data-edit-format="markdown-block" data-edit-id="md_stance_schema_markup_google" data-edit-label="Stance: schema markup (google)" data-max-length="600" data-required="true"><span class="stance-label stance-label--logo stance-label--google"><img alt="Google" height="16" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNzIgOTIiIHdpZHRoPSIyNzIiIGhlaWdodD0iOTIiPgogICAgPHBhdGggZmlsbD0iI0VBNDMzNSIgZD0iTTExNS43NSA0Ny4xOGMwIDEyLjc3LTkuOTkgMjIuMTgtMjIuMjUgMjIuMThzLTIyLjI1LTkuNDEtMjIuMjUtMjIuMThDNzEuMjUgMzQuMzIgODEuMjQgMjUgOTMuNSAyNXMyMi4yNSA5LjMyIDIyLjI1IDIyLjE4em0tOS43NCAwYzAtNy45OC01Ljc5LTEzLjQ0LTEyLjUxLTEzLjQ0UzgwLjk5IDM5LjIgODAuOTkgNDcuMThjMCA3LjkgNS43OSAxMy40NCAxMi41MSAxMy40NHMxMi41MS01LjU1IDEyLjUxLTEzLjQ0eiIvPgogICAgPHBhdGggZmlsbD0iI0ZCQkMwNSIgZD0iTTE2My43NSA0Ny4xOGMwIDEyLjc3LTkuOTkgMjIuMTgtMjIuMjUgMjIuMThzLTIyLjI1LTkuNDEtMjIuMjUtMjIuMThjMC0xMi44NSA5Ljk5LTIyLjE4IDIyLjI1LTIyLjE4czIyLjI1IDkuMzIgMjIuMjUgMjIuMTh6bS05Ljc0IDBjMC03Ljk4LTUuNzktMTMuNDQtMTIuNTEtMTMuNDRzLTEyLjUxIDUuNDYtMTIuNTEgMTMuNDRjMCA3LjkgNS43OSAxMy40NCAxMi41MSAxMy40NHMxMi41MS01LjU1IDEyLjUxLTEzLjQ0eiIvPgogICAgPHBhdGggZmlsbD0iIzQyODVGNCIgZD0iTTIwOS43NSAyNi4zNHYzOS44MmMwIDE2LjM4LTkuNjYgMjMuMDctMjEuMDggMjMuMDctMTAuNzUgMC0xNy4yMi03LjE5LTE5LjY2LTEzLjA3bDguNDgtMy41M2MxLjUxIDMuNjEgNS4yMSA3Ljg3IDExLjE3IDcuODcgNy4zMSAwIDExLjg0LTQuNTEgMTEuODQtMTN2LTMuMTloLS4zNGMtMi4xOCAyLjY5LTYuMzggNS4wNC0xMS42OCA1LjA0LTExLjA5IDAtMjEuMjUtOS42Ni0yMS4yNS0yMi4wOSAwLTEyLjUyIDEwLjE2LTIyLjI2IDIxLjI1LTIyLjI2IDUuMjkgMCA5LjQ5IDIuMzUgMTEuNjggNC45NmguMzR2LTMuNjFoOS4yNXptLTguNTYgMjAuOTJjMC03LjgxLTUuMjEtMTMuNTItMTEuODQtMTMuNTItNi43MiAwLTEyLjM1IDUuNzEtMTIuMzUgMTMuNTIgMCA3LjczIDUuNjMgMTMuMzYgMTIuMzUgMTMuMzYgNi42MyAwIDExLjg0LTUuNjMgMTEuODQtMTMuMzZ6Ii8+CiAgICA8cGF0aCBmaWxsPSIjMzRBODUzIiBkPSJNMjI1IDN2NjVoLTkuNVYzaDkuNXoiLz4KICAgIDxwYXRoIGZpbGw9IiNFQTQzMzUiIGQ9Ik0yNjIuMDIgNTQuNDhsNy41NiA1LjA0Yy0yLjQ0IDMuNjEtOC4zMiA5LjgzLTE4LjQ4IDkuODMtMTIuNiAwLTIyLjAxLTkuNzQtMjIuMDEtMjIuMTggMC0xMy4xOSA5LjQ5LTIyLjE4IDIwLjkyLTIyLjE4IDExLjUxIDAgMTcuMTQgOS4xNiAxOC45OCAxNC4xMWwxLjAxIDIuNTItMjkuNjUgMTIuMjhjMi4yNyA0LjQ1IDUuOCA2LjcyIDEwLjc1IDYuNzIgNC45NiAwIDguNC0yLjQ0IDEwLjkyLTYuMTR6bS0yMy4yNy03Ljk4bDE5LjgyLTguMjNjLTEuMDktMi43Ny00LjM3LTQuNy04LjIzLTQuNy00Ljk1IDAtMTEuODQgNC4zNy0xMS41OSAxMi45M3oiLz4KICAgIDxwYXRoIGZpbGw9IiM0Mjg1RjQiIGQ9Ik0zNS4yOSA0MS40MVYzMkg2N2MuMzEgMS42NC40NyAzLjU4LjQ3IDUuNjggMCA3LjA2LTEuOTMgMTUuNzktOC4xNSAyMi4wMS02LjA1IDYuMy0xMy43OCA5LjY2LTI0LjAyIDkuNjZDMTYuMzIgNjkuMzUuMzYgNTMuODkuMzYgMzQuOTEuMzYgMTUuOTMgMTYuMzIuNDcgMzUuMy40N2MxMC41IDAgMTcuOTggNC4xMiAyMy42IDkuNDlsLTYuNjQgNi42NGMtNC4wMy0zLjc4LTkuNDktNi43Mi0xNi45Ny02LjcyLTEzLjg2IDAtMjQuNyAxMS4xNy0yNC43IDI1LjAzIDAgMTMuODYgMTAuODQgMjUuMDMgMjQuNyAyNS4wMyA4Ljk5IDAgMTQuMTEtMy42MSAxNy4zOS02Ljg5IDIuNjYtMi42NiA0LjQxLTYuNDYgNS4xLTExLjY1bC0yMi40OS4wMXoiLz4KPC9zdmc+Cg==" width="58"></span><br><span>Schema is not required for generative AI search, and there is no special markup to add. Google still recommends structured data for rich results, but not as an AI-specific lever.</span></p>
+<p class="stance" data-edit-format="markdown-block" data-edit-id="md_stance_schema_markup_microsoft" data-edit-label="Stance: schema markup (microsoft)" data-max-length="600" data-required="true"><span class="stance-label stance-label--logo stance-label--microsoft"><img alt="Microsoft" height="16" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDMzNy42IDcyIj4KPHBhdGggZmlsbD0iIzczNzM3MyIgZD0iTTE0MC40LDE0LjR2NDMuMmgtNy41VjIzLjdoLTAuMWwtMTMuNCwzMy45aC01bC0xMy43LTMzLjloLTAuMXYzMy45aC02LjlWMTQuNGgxMC44bDEyLjQsMzJoMC4ybDEzLjEtMzJIMTQwLjQgeiBNMTQ2LjYsMTcuN2MwLTEuMiwwLjQtMi4yLDEuMy0zYzAuOS0wLjgsMS45LTEuMiwzLjEtMS4yYzEuMywwLDIuNCwwLjQsMy4yLDEuMnMxLjMsMS44LDEuMywzYzAsMS4yLTAuNCwyLjItMS4zLDMgYy0wLjksMC44LTEuOSwxLjItMy4yLDEuMnMtMi4zLTAuNC0zLjEtMS4yQzE0Ny4xLDE5LjgsMTQ2LjYsMTguOCwxNDYuNiwxNy43eiBNMTU0LjcsMjYuNnYzMWgtNy4zdi0zMUgxNTQuN3ogTTE3Ni44LDUyLjMgYzEuMSwwLDIuMy0wLjIsMy42LTAuOGMxLjMtMC41LDIuNS0xLjIsMy42LTJ2Ni44Yy0xLjIsMC43LTIuNSwxLjItNCwxLjVjLTEuNSwwLjMtMy4xLDAuNS00LjksMC41Yy00LjYsMC04LjMtMS40LTExLjEtNC4zIGMtMi45LTIuOS00LjMtNi42LTQuMy0xMWMwLTUsMS41LTkuMSw0LjQtMTIuM2MyLjktMy4yLDctNC44LDEyLjQtNC44YzEuNCwwLDIuOCwwLjIsNC4xLDAuNWMxLjQsMC4zLDIuNSwwLjgsMy4zLDEuMnY3IGMtMS4xLTAuOC0yLjMtMS41LTMuNC0xLjljLTEuMi0wLjQtMi40LTAuNy0zLjYtMC43Yy0yLjksMC01LjIsMC45LTcsMi44cy0yLjYsNC40LTIuNiw3LjZjMCwzLjEsMC45LDUuNiwyLjYsNy4zIEMxNzEuNiw1MS40LDE3My45LDUyLjMsMTc2LjgsNTIuM3ogTTIwNC43LDI2LjFjMC42LDAsMS4xLDAsMS42LDAuMXMwLjksMC4yLDEuMiwwLjN2Ny40Yy0wLjQtMC4zLTAuOS0wLjYtMS43LTAuOCBzLTEuNi0wLjQtMi43LTAuNGMtMS44LDAtMy4zLDAuOC00LjUsMi4zcy0xLjksMy44LTEuOSw3djE1LjZoLTcuM3YtMzFoNy4zdjQuOWgwLjFjMC43LTEuNywxLjctMywzLTQgQzIwMS4yLDI2LjYsMjAyLjgsMjYuMSwyMDQuNywyNi4xeiBNMjA3LjksNDIuNmMwLTUuMSwxLjUtOS4yLDQuMy0xMi4yYzIuOS0zLDYuOS00LjUsMTItNC41YzQuOCwwLDguNiwxLjQsMTEuMyw0LjMgczQuMSw2LjgsNC4xLDExLjdjMCw1LTEuNSw5LTQuMywxMmMtMi45LDMtNi44LDQuNS0xMS44LDQuNWMtNC44LDAtOC42LTEuNC0xMS40LTQuMkMyMDkuMyw1MS4zLDIwNy45LDQ3LjQsMjA3LjksNDIuNnogTTIxNS41LDQyLjNjMCwzLjIsMC43LDUuNywyLjIsNy40czMuNiwyLjYsNi4zLDIuNmMyLjYsMCw0LjctMC44LDYuMS0yLjZjMS40LTEuNywyLjEtNC4yLDIuMS03LjZjMC0zLjMtMC43LTUuOC0yLjEtNy42IGMtMS40LTEuNy0zLjUtMi42LTYtMi42Yy0yLjcsMC00LjcsMC45LTYuMiwyLjdDMjE2LjIsMzYuNSwyMTUuNSwzOSwyMTUuNSw0Mi4zeiBNMjUwLjUsMzQuOGMwLDEsMC4zLDEuOSwxLDIuNSBjMC43LDAuNiwyLjEsMS4zLDQuNCwyLjJjMi45LDEuMiw1LDIuNSw2LjEsMy45YzEuMiwxLjUsMS44LDMuMiwxLjgsNS4zYzAsMi45LTEuMSw1LjItMy40LDdjLTIuMiwxLjgtNS4zLDIuNi05LjEsMi42IGMtMS4zLDAtMi43LTAuMi00LjMtMC41Yy0xLjYtMC4zLTIuOS0wLjctNC0xLjJ2LTcuMmMxLjMsMC45LDIuOCwxLjcsNC4zLDIuMmMxLjUsMC41LDIuOSwwLjgsNC4yLDAuOGMxLjYsMCwyLjktMC4yLDMuNi0wLjcgYzAuOC0wLjUsMS4yLTEuMiwxLjItMi4zYzAtMS0wLjQtMS44LTEuMi0yLjZjLTAuOC0wLjctMi40LTEuNS00LjYtMi40Yy0yLjctMS4xLTQuNi0yLjQtNS43LTMuOHMtMS43LTMuMi0xLjctNS40IGMwLTIuOCwxLjEtNS4xLDMuMy02LjljMi4yLTEuOCw1LjEtMi43LDguNi0yLjdjMS4xLDAsMi4zLDAuMSwzLjYsMC40czIuNSwwLjYsMy40LDAuOVYzNGMtMS0wLjYtMi4xLTEuMi0zLjQtMS43IGMtMS4zLTAuNS0yLjYtMC43LTMuOC0wLjdjLTEuNCwwLTIuNSwwLjMtMy4yLDAuOEMyNTAuOSwzMy4xLDI1MC41LDMzLjgsMjUwLjUsMzQuOHogTTI2Ni45LDQyLjZjMC01LjEsMS41LTkuMiw0LjMtMTIuMiBjMi45LTMsNi45LTQuNSwxMi00LjVjNC44LDAsOC42LDEuNCwxMS4zLDQuM3M0LjEsNi44LDQuMSwxMS43YzAsNS0xLjUsOS00LjMsMTJjLTIuOSwzLTYuOCw0LjUtMTEuOCw0LjVjLTQuOCwwLTguNi0xLjQtMTEuNC00LjIgQzI2OC40LDUxLjMsMjY2LjksNDcuNCwyNjYuOSw0Mi42eiBNMjc0LjUsNDIuM2MwLDMuMiwwLjcsNS43LDIuMiw3LjRzMy42LDIuNiw2LjMsMi42YzIuNiwwLDQuNy0wLjgsNi4xLTIuNiBjMS40LTEuNywyLjEtNC4yLDIuMS03LjZjMC0zLjMtMC43LTUuOC0yLjEtNy42Yy0xLjQtMS43LTMuNS0yLjYtNi0yLjZjLTIuNywwLTQuNywwLjktNi4yLDIuN0MyNzUuMywzNi41LDI3NC41LDM5LDI3NC41LDQyLjN6IE0zMjIuOSwzMi42aC0xMC45djI1aC03LjR2LTI1aC01LjJ2LTZoNS4ydi00LjNjMC0zLjIsMS4xLTUuOSwzLjItOHM0LjgtMy4xLDguMS0zLjFjMC45LDAsMS43LDAuMSwyLjQsMC4xczEuMywwLjIsMS44LDAuNHY2LjMgYy0wLjItMC4xLTAuNy0wLjMtMS4zLTAuNWMtMC42LTAuMi0xLjMtMC4zLTIuMS0wLjNjLTEuNSwwLTIuNywwLjUtMy41LDEuNGMtMC44LDAuOS0xLjIsMi40LTEuMiw0LjJ2My43aDEwLjl2LTdsNy4zLTIuMnY5LjJoNy40IHY2aC03LjR2MTQuNWMwLDEuOSwwLjQsMy4yLDEsNGMwLjcsMC44LDEuOCwxLjIsMy4zLDEuMmMwLjQsMCwwLjktMC4xLDEuNS0wLjNjMC42LTAuMiwxLjEtMC40LDEuNS0wLjd2NmMtMC41LDAuMy0xLjIsMC41LTIuMywwLjcgYy0xLjEsMC4yLTIuMSwwLjMtMy4yLDAuM2MtMy4xLDAtNS40LTAuOC02LjktMi40Yy0xLjUtMS42LTIuMy00LjEtMi4zLTcuNEwzMjIuOSwzMi42TDMyMi45LDMyLjZ6Ii8+CjxyZWN0IGZpbGw9IiNGMjUwMjIiIHdpZHRoPSIzNC4yIiBoZWlnaHQ9IjM0LjIiLz4KPHJlY3QgeD0iMzcuOCIgZmlsbD0iIzdGQkEwMCIgd2lkdGg9IjM0LjIiIGhlaWdodD0iMzQuMiIvPgo8cmVjdCB5PSIzNy44IiBmaWxsPSIjMDBBNEVGIiB3aWR0aD0iMzQuMiIgaGVpZ2h0PSIzNC4yIi8+CjxyZWN0IHg9IjM3LjgiIHk9IjM3LjgiIGZpbGw9IiNGRkI5MDAiIHdpZHRoPSIzNC4yIiBoZWlnaHQ9IjM0LjIiLz4KPC9zdmc+Cg==" width="72"></span><br><span>Schema is a key recommendation: it turns plain text into structured data machines interpret with confidence. Positioned as a primary optimization lever for Copilot and Bing.</span></p>
+</div>
+<p class="stance stance--fox" data-edit-format="markdown-block" data-edit-id="md_stance_schema_markup_fox" data-edit-label="Stance: schema markup (fox)" data-max-length="600" data-required="true"><span class="stance-label stance-label--logo stance-label--fox"><img alt="FOX One" height="13" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB3aWR0aD0iMzk2IiBoZWlnaHQ9Ijg4IiB2aWV3Qm94PSIwIDAgMzk2IDg4IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxnIGNsaXAtcGF0aD0idXJsKCNjbGlwMF81MjJfMTcwKSI+CiAgICA8cGF0aCBkPSJNMjQuNjUxOCAyMy45MzI0SDU0LjMwNzhMNTIuNjgwOCAwSDBWODcuNjk0MUgyNC42NTE4VjU5LjM5NjlINDguODEwNVYzNS40NjQ1SDI0LjY1MThWMjMuOTMyNFoiIHN0eWxlPSJmaWxsOiByZ2IoMCwgMCwgMCk7Ii8+CiAgICA8cGF0aCBkPSJNMTM2LjYyIDQzLjk3MUMxMzYuNjIgMjAuMjg2NyAxMTcuOTM0IDEuMjM5OTkgOTQuODg0NiAxLjIzOTk5QzcxLjgzNTIgMS4yMzk5OSA1My4yNzI1IDIwLjI4NjcgNTMuMjcyNSA0My45NzFDNTMuMjcyNSA2Ny42NTU0IDcxLjk1ODUgODYuNzAyMSA5NC44ODQ2IDg2LjcwMjFDMTE3LjgxMSA4Ni43MDIxIDEzNi42MiA2Ny42NTU0IDEzNi42MiA0My45NzFaTTEwMi41MDIgNjEuNTA0OUMxMDIuNTAyIDY1Ljc3MDYgOTkuMzk1OSA2OC44OTU0IDk1LjI3OTEgNjguODk1NEM5MS4xNjIyIDY4Ljg5NTQgODcuOTMyOCA2NS43NzA2IDg3LjkzMjggNjEuNTA0OVYyNi40MTI0Qzg3LjkzMjggMjIuMTQ2NyA5MS4wMzkgMTkuMDIxOSA5NS4xNTU4IDE5LjAyMTlDOTkuMjcyNyAxOS4wMjE5IDEwMi41MDIgMjIuMTQ2NyAxMDIuNTAyIDI2LjQxMjRWNjEuNTA0OVoiIHN0eWxlPSJmaWxsOiByZ2IoMCwgMCwgMCk7Ii8+CiAgICA8cGF0aCBkPSJNMjAwLjUxNyAwSDE3My40OTlMMTYzLjAyMiAxOS4wNDY3TDE1Mi45NCAwSDEyNC45MTFMMTQ5LjQ2NCA0Mi40ODNMMTIzLjU1NSA4Ny42OTQxSDE1MC42OTZMMTYyLjc3NiA2NS41MjI2TDE3NC44NTUgODcuNjk0MUgyMDIuNzYxTDE3Ni40ODIgNDIuMjEwMkwyMDAuNTE3IDBaIiBzdHlsZT0iZmlsbDogcmdiKDAsIDAsIDApOyIvPgogICAgPHBhdGggZD0iTTM1MC4xMDQgMEgyNDQuOTg5QzIxOC40NjQgMCAxOTkuMjg1IDE4LjQyNjcgMTk5LjI4NSA0My44NDcxQzE5OS4yODUgNjkuMjY3NSAyMTguNDY0IDg3LjY5NDEgMjQ0Ljk4OSA4Ny42OTQxSDM1MC4xMDRDMzc2LjYzIDg3LjY5NDEgMzk1LjgwOSA2OS4yNjc1IDM5NS44MDkgNDMuODQ3MUMzOTUuODA5IDE4LjQyNjcgMzc2LjYzIDAgMzUwLjEwNCAwWk0yNDYuNDkzIDcxLjU0OTFDMjMxLjE4NCA3MS41NDkxIDIyMi4yMTEgNjAuNjM2OSAyMjIuMjExIDQzLjk3MTFDMjIyLjIxMSAyNy4zMDUyIDIzMS4zMDcgMTYuMTQ1IDI0Ni40OTMgMTYuMTQ1QzI2MS42NzggMTYuMTQ1IDI3MC43NzUgMjcuMDU3MiAyNzAuNzc1IDQzLjk3MTFDMjcwLjc3NSA2MC44ODQ5IDI2MS44MDIgNzEuNTQ5MSAyNDYuNDkzIDcxLjU0OTFaTTMyMi4zNDYgNzAuOTA0M0gzMDguODg3TDI5MC4yIDM5LjA4NTRIMjg5LjgzMVY3MC45MDQzSDI3Ny41MDVWMTYuNzY1MUgyOTAuOTY1TDMwOS42NTEgNDguMzM1OUgzMTAuMDJWMTYuNzY1MUgzMjIuMzQ2VjcwLjkwNDNaTTM2Ny4zMTEgNzAuOTA0M0gzMzEuNTY2VjE2Ljc2NTFIMzY2LjY5NUwzNjcuOTUyIDI3LjkyNTJIMzQ0LjQxVjM4LjA2ODZIMzY1LjQ2MlY0OS4yMjg4SDM0NC40MVY1OS43NDQxSDM2OC41NjhMMzY3LjMxMSA3MC45MDQzWiIgc3R5bGU9ImZpbGw6IHJnYigwLCAwLCAwKTsiLz4KICAgIDxwYXRoIGQ9Ik0yNDYuNDkzIDI3LjY3NzJDMjQwLjM3OSAyNy42NzcyIDIzNy4wMjcgMzIuMDY2OSAyMzcuMDI3IDQwLjIwMTRWNDcuNDY3OUMyMzcuMDI3IDU1LjYwMjUgMjQwLjM3OSA1OS45OTIxIDI0Ni40OTMgNTkuOTkyMUMyNTIuNjA3IDU5Ljk5MjEgMjU1Ljk1OSA1NS42MDI1IDI1NS45NTkgNDcuNDY3OVY0MC4yMDE0QzI1NS45NTkgMzIuMDY2OSAyNTIuNjA3IDI3LjY3NzIgMjQ2LjQ5MyAyNy42NzcyWiIgc3R5bGU9ImZpbGw6IHJnYigwLCAwLCAwKTsiLz4KICA8L2c+CiAgPGRlZnM+CiAgICA8Y2xpcFBhdGggaWQ9ImNsaXAwXzUyMl8xNzAiPgogICAgICA8cmVjdCB3aWR0aD0iMzk1LjgwOSIgaGVpZ2h0PSI4Ny42OTQxIiBmaWxsPSJ3aGl0ZSIvPgogICAgPC9jbGlwUGF0aD4KICA8L2RlZnM+Cjwvc3ZnPg==" width="56"></span><br><span>Continue implementing template-level JSON-LD for rich results and Bing/Copilot value. Do not add schema as an "AI hack"; scope it as sound technical SEO, which is how FOX One SEO has already framed it.</span></p>
+</article>
+<article class="contradiction-card">
+<h3 class="contradiction-title" data-edit-format="plain" data-edit-id="txt_contra_rewriting_content_title" data-edit-label="Contradiction title: rewriting content" data-max-length="120" data-required="true">Rewriting content for AI systems</h3>
+<div class="stance-grid">
+<p class="stance stance-col--google" data-edit-format="markdown-block" data-edit-id="md_stance_rewriting_content_google" data-edit-label="Stance: rewriting content (google)" data-max-length="600" data-required="true"><span class="stance-label stance-label--logo stance-label--google"><img alt="Google" height="16" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNzIgOTIiIHdpZHRoPSIyNzIiIGhlaWdodD0iOTIiPgogICAgPHBhdGggZmlsbD0iI0VBNDMzNSIgZD0iTTExNS43NSA0Ny4xOGMwIDEyLjc3LTkuOTkgMjIuMTgtMjIuMjUgMjIuMThzLTIyLjI1LTkuNDEtMjIuMjUtMjIuMThDNzEuMjUgMzQuMzIgODEuMjQgMjUgOTMuNSAyNXMyMi4yNSA5LjMyIDIyLjI1IDIyLjE4em0tOS43NCAwYzAtNy45OC01Ljc5LTEzLjQ0LTEyLjUxLTEzLjQ0UzgwLjk5IDM5LjIgODAuOTkgNDcuMThjMCA3LjkgNS43OSAxMy40NCAxMi41MSAxMy40NHMxMi41MS01LjU1IDEyLjUxLTEzLjQ0eiIvPgogICAgPHBhdGggZmlsbD0iI0ZCQkMwNSIgZD0iTTE2My43NSA0Ny4xOGMwIDEyLjc3LTkuOTkgMjIuMTgtMjIuMjUgMjIuMThzLTIyLjI1LTkuNDEtMjIuMjUtMjIuMThjMC0xMi44NSA5Ljk5LTIyLjE4IDIyLjI1LTIyLjE4czIyLjI1IDkuMzIgMjIuMjUgMjIuMTh6bS05Ljc0IDBjMC03Ljk4LTUuNzktMTMuNDQtMTIuNTEtMTMuNDRzLTEyLjUxIDUuNDYtMTIuNTEgMTMuNDRjMCA3LjkgNS43OSAxMy40NCAxMi41MSAxMy40NHMxMi41MS01LjU1IDEyLjUxLTEzLjQ0eiIvPgogICAgPHBhdGggZmlsbD0iIzQyODVGNCIgZD0iTTIwOS43NSAyNi4zNHYzOS44MmMwIDE2LjM4LTkuNjYgMjMuMDctMjEuMDggMjMuMDctMTAuNzUgMC0xNy4yMi03LjE5LTE5LjY2LTEzLjA3bDguNDgtMy41M2MxLjUxIDMuNjEgNS4yMSA3Ljg3IDExLjE3IDcuODcgNy4zMSAwIDExLjg0LTQuNTEgMTEuODQtMTN2LTMuMTloLS4zNGMtMi4xOCAyLjY5LTYuMzggNS4wNC0xMS42OCA1LjA0LTExLjA5IDAtMjEuMjUtOS42Ni0yMS4yNS0yMi4wOSAwLTEyLjUyIDEwLjE2LTIyLjI2IDIxLjI1LTIyLjI2IDUuMjkgMCA5LjQ5IDIuMzUgMTEuNjggNC45NmguMzR2LTMuNjFoOS4yNXptLTguNTYgMjAuOTJjMC03LjgxLTUuMjEtMTMuNTItMTEuODQtMTMuNTItNi43MiAwLTEyLjM1IDUuNzEtMTIuMzUgMTMuNTIgMCA3LjczIDUuNjMgMTMuMzYgMTIuMzUgMTMuMzYgNi42MyAwIDExLjg0LTUuNjMgMTEuODQtMTMuMzZ6Ii8+CiAgICA8cGF0aCBmaWxsPSIjMzRBODUzIiBkPSJNMjI1IDN2NjVoLTkuNVYzaDkuNXoiLz4KICAgIDxwYXRoIGZpbGw9IiNFQTQzMzUiIGQ9Ik0yNjIuMDIgNTQuNDhsNy41NiA1LjA0Yy0yLjQ0IDMuNjEtOC4zMiA5LjgzLTE4LjQ4IDkuODMtMTIuNiAwLTIyLjAxLTkuNzQtMjIuMDEtMjIuMTggMC0xMy4xOSA5LjQ5LTIyLjE4IDIwLjkyLTIyLjE4IDExLjUxIDAgMTcuMTQgOS4xNiAxOC45OCAxNC4xMWwxLjAxIDIuNTItMjkuNjUgMTIuMjhjMi4yNyA0LjQ1IDUuOCA2LjcyIDEwLjc1IDYuNzIgNC45NiAwIDguNC0yLjQ0IDEwLjkyLTYuMTR6bS0yMy4yNy03Ljk4bDE5LjgyLTguMjNjLTEuMDktMi43Ny00LjM3LTQuNy04LjIzLTQuNy00Ljk1IDAtMTEuODQgNC4zNy0xMS41OSAxMi45M3oiLz4KICAgIDxwYXRoIGZpbGw9IiM0Mjg1RjQiIGQ9Ik0zNS4yOSA0MS40MVYzMkg2N2MuMzEgMS42NC40NyAzLjU4LjQ3IDUuNjggMCA3LjA2LTEuOTMgMTUuNzktOC4xNSAyMi4wMS02LjA1IDYuMy0xMy43OCA5LjY2LTI0LjAyIDkuNjZDMTYuMzIgNjkuMzUuMzYgNTMuODkuMzYgMzQuOTEuMzYgMTUuOTMgMTYuMzIuNDcgMzUuMy40N2MxMC41IDAgMTcuOTggNC4xMiAyMy42IDkuNDlsLTYuNjQgNi42NGMtNC4wMy0zLjc4LTkuNDktNi43Mi0xNi45Ny02LjcyLTEzLjg2IDAtMjQuNyAxMS4xNy0yNC43IDI1LjAzIDAgMTMuODYgMTAuODQgMjUuMDMgMjQuNyAyNS4wMyA4Ljk5IDAgMTQuMTEtMy42MSAxNy4zOS02Ljg5IDIuNjYtMi42NiA0LjQxLTYuNDYgNS4xLTExLjY1bC0yMi40OS4wMXoiLz4KPC9zdmc+Cg==" width="58"></span><br><span>No need to write in a specific way for AI. Google's systems understand synonyms and general meaning; no AI-specific rewrites required.</span></p>
+<p class="stance" data-edit-format="markdown-block" data-edit-id="md_stance_rewriting_content_microsoft" data-edit-label="Stance: rewriting content (microsoft)" data-max-length="600" data-required="true"><span class="stance-label stance-label--logo stance-label--microsoft"><img alt="Microsoft" height="16" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDMzNy42IDcyIj4KPHBhdGggZmlsbD0iIzczNzM3MyIgZD0iTTE0MC40LDE0LjR2NDMuMmgtNy41VjIzLjdoLTAuMWwtMTMuNCwzMy45aC01bC0xMy43LTMzLjloLTAuMXYzMy45aC02LjlWMTQuNGgxMC44bDEyLjQsMzJoMC4ybDEzLjEtMzJIMTQwLjQgeiBNMTQ2LjYsMTcuN2MwLTEuMiwwLjQtMi4yLDEuMy0zYzAuOS0wLjgsMS45LTEuMiwzLjEtMS4yYzEuMywwLDIuNCwwLjQsMy4yLDEuMnMxLjMsMS44LDEuMywzYzAsMS4yLTAuNCwyLjItMS4zLDMgYy0wLjksMC44LTEuOSwxLjItMy4yLDEuMnMtMi4zLTAuNC0zLjEtMS4yQzE0Ny4xLDE5LjgsMTQ2LjYsMTguOCwxNDYuNiwxNy43eiBNMTU0LjcsMjYuNnYzMWgtNy4zdi0zMUgxNTQuN3ogTTE3Ni44LDUyLjMgYzEuMSwwLDIuMy0wLjIsMy42LTAuOGMxLjMtMC41LDIuNS0xLjIsMy42LTJ2Ni44Yy0xLjIsMC43LTIuNSwxLjItNCwxLjVjLTEuNSwwLjMtMy4xLDAuNS00LjksMC41Yy00LjYsMC04LjMtMS40LTExLjEtNC4zIGMtMi45LTIuOS00LjMtNi42LTQuMy0xMWMwLTUsMS41LTkuMSw0LjQtMTIuM2MyLjktMy4yLDctNC44LDEyLjQtNC44YzEuNCwwLDIuOCwwLjIsNC4xLDAuNWMxLjQsMC4zLDIuNSwwLjgsMy4zLDEuMnY3IGMtMS4xLTAuOC0yLjMtMS41LTMuNC0xLjljLTEuMi0wLjQtMi40LTAuNy0zLjYtMC43Yy0yLjksMC01LjIsMC45LTcsMi44cy0yLjYsNC40LTIuNiw3LjZjMCwzLjEsMC45LDUuNiwyLjYsNy4zIEMxNzEuNiw1MS40LDE3My45LDUyLjMsMTc2LjgsNTIuM3ogTTIwNC43LDI2LjFjMC42LDAsMS4xLDAsMS42LDAuMXMwLjksMC4yLDEuMiwwLjN2Ny40Yy0wLjQtMC4zLTAuOS0wLjYtMS43LTAuOCBzLTEuNi0wLjQtMi43LTAuNGMtMS44LDAtMy4zLDAuOC00LjUsMi4zcy0xLjksMy44LTEuOSw3djE1LjZoLTcuM3YtMzFoNy4zdjQuOWgwLjFjMC43LTEuNywxLjctMywzLTQgQzIwMS4yLDI2LjYsMjAyLjgsMjYuMSwyMDQuNywyNi4xeiBNMjA3LjksNDIuNmMwLTUuMSwxLjUtOS4yLDQuMy0xMi4yYzIuOS0zLDYuOS00LjUsMTItNC41YzQuOCwwLDguNiwxLjQsMTEuMyw0LjMgczQuMSw2LjgsNC4xLDExLjdjMCw1LTEuNSw5LTQuMywxMmMtMi45LDMtNi44LDQuNS0xMS44LDQuNWMtNC44LDAtOC42LTEuNC0xMS40LTQuMkMyMDkuMyw1MS4zLDIwNy45LDQ3LjQsMjA3LjksNDIuNnogTTIxNS41LDQyLjNjMCwzLjIsMC43LDUuNywyLjIsNy40czMuNiwyLjYsNi4zLDIuNmMyLjYsMCw0LjctMC44LDYuMS0yLjZjMS40LTEuNywyLjEtNC4yLDIuMS03LjZjMC0zLjMtMC43LTUuOC0yLjEtNy42IGMtMS40LTEuNy0zLjUtMi42LTYtMi42Yy0yLjcsMC00LjcsMC45LTYuMiwyLjdDMjE2LjIsMzYuNSwyMTUuNSwzOSwyMTUuNSw0Mi4zeiBNMjUwLjUsMzQuOGMwLDEsMC4zLDEuOSwxLDIuNSBjMC43LDAuNiwyLjEsMS4zLDQuNCwyLjJjMi45LDEuMiw1LDIuNSw2LjEsMy45YzEuMiwxLjUsMS44LDMuMiwxLjgsNS4zYzAsMi45LTEuMSw1LjItMy40LDdjLTIuMiwxLjgtNS4zLDIuNi05LjEsMi42IGMtMS4zLDAtMi43LTAuMi00LjMtMC41Yy0xLjYtMC4zLTIuOS0wLjctNC0xLjJ2LTcuMmMxLjMsMC45LDIuOCwxLjcsNC4zLDIuMmMxLjUsMC41LDIuOSwwLjgsNC4yLDAuOGMxLjYsMCwyLjktMC4yLDMuNi0wLjcgYzAuOC0wLjUsMS4yLTEuMiwxLjItMi4zYzAtMS0wLjQtMS44LTEuMi0yLjZjLTAuOC0wLjctMi40LTEuNS00LjYtMi40Yy0yLjctMS4xLTQuNi0yLjQtNS43LTMuOHMtMS43LTMuMi0xLjctNS40IGMwLTIuOCwxLjEtNS4xLDMuMy02LjljMi4yLTEuOCw1LjEtMi43LDguNi0yLjdjMS4xLDAsMi4zLDAuMSwzLjYsMC40czIuNSwwLjYsMy40LDAuOVYzNGMtMS0wLjYtMi4xLTEuMi0zLjQtMS43IGMtMS4zLTAuNS0yLjYtMC43LTMuOC0wLjdjLTEuNCwwLTIuNSwwLjMtMy4yLDAuOEMyNTAuOSwzMy4xLDI1MC41LDMzLjgsMjUwLjUsMzQuOHogTTI2Ni45LDQyLjZjMC01LjEsMS41LTkuMiw0LjMtMTIuMiBjMi45LTMsNi45LTQuNSwxMi00LjVjNC44LDAsOC42LDEuNCwxMS4zLDQuM3M0LjEsNi44LDQuMSwxMS43YzAsNS0xLjUsOS00LjMsMTJjLTIuOSwzLTYuOCw0LjUtMTEuOCw0LjVjLTQuOCwwLTguNi0xLjQtMTEuNC00LjIgQzI2OC40LDUxLjMsMjY2LjksNDcuNCwyNjYuOSw0Mi42eiBNMjc0LjUsNDIuM2MwLDMuMiwwLjcsNS43LDIuMiw3LjRzMy42LDIuNiw2LjMsMi42YzIuNiwwLDQuNy0wLjgsNi4xLTIuNiBjMS40LTEuNywyLjEtNC4yLDIuMS03LjZjMC0zLjMtMC43LTUuOC0yLjEtNy42Yy0xLjQtMS43LTMuNS0yLjYtNi0yLjZjLTIuNywwLTQuNywwLjktNi4yLDIuN0MyNzUuMywzNi41LDI3NC41LDM5LDI3NC41LDQyLjN6IE0zMjIuOSwzMi42aC0xMC45djI1aC03LjR2LTI1aC01LjJ2LTZoNS4ydi00LjNjMC0zLjIsMS4xLTUuOSwzLjItOHM0LjgtMy4xLDguMS0zLjFjMC45LDAsMS43LDAuMSwyLjQsMC4xczEuMywwLjIsMS44LDAuNHY2LjMgYy0wLjItMC4xLTAuNy0wLjMtMS4zLTAuNWMtMC42LTAuMi0xLjMtMC4zLTIuMS0wLjNjLTEuNSwwLTIuNywwLjUtMy41LDEuNGMtMC44LDAuOS0xLjIsMi40LTEuMiw0LjJ2My43aDEwLjl2LTdsNy4zLTIuMnY5LjJoNy40IHY2aC03LjR2MTQuNWMwLDEuOSwwLjQsMy4yLDEsNGMwLjcsMC44LDEuOCwxLjIsMy4zLDEuMmMwLjQsMCwwLjktMC4xLDEuNS0wLjNjMC42LTAuMiwxLjEtMC40LDEuNS0wLjd2NmMtMC41LDAuMy0xLjIsMC41LTIuMywwLjcgYy0xLjEsMC4yLTIuMSwwLjMtMy4yLDAuM2MtMy4xLDAtNS40LTAuOC02LjktMi40Yy0xLjUtMS42LTIuMy00LjEtMi4zLTcuNEwzMjIuOSwzMi42TDMyMi45LDMyLjZ6Ii8+CjxyZWN0IGZpbGw9IiNGMjUwMjIiIHdpZHRoPSIzNC4yIiBoZWlnaHQ9IjM0LjIiLz4KPHJlY3QgeD0iMzcuOCIgZmlsbD0iIzdGQkEwMCIgd2lkdGg9IjM0LjIiIGhlaWdodD0iMzQuMiIvPgo8cmVjdCB5PSIzNy44IiBmaWxsPSIjMDBBNEVGIiB3aWR0aD0iMzQuMiIgaGVpZ2h0PSIzNC4yIi8+CjxyZWN0IHg9IjM3LjgiIHk9IjM3LjgiIGZpbGw9IiNGRkI5MDAiIHdpZHRoPSIzNC4yIiBoZWlnaHQ9IjM0LjIiLz4KPC9zdmc+Cg==" width="72"></span><br><span>Detailed writing-style guidance: avoid em dashes, keep punctuation simple, and write self-contained "snippable" sentences tuned for machine parsing.</span></p>
+</div>
+<p class="stance stance--fox" data-edit-format="markdown-block" data-edit-id="md_stance_rewriting_content_fox" data-edit-label="Stance: rewriting content (fox)" data-max-length="600" data-required="true"><span class="stance-label stance-label--logo stance-label--fox"><img alt="FOX One" height="13" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB3aWR0aD0iMzk2IiBoZWlnaHQ9Ijg4IiB2aWV3Qm94PSIwIDAgMzk2IDg4IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxnIGNsaXAtcGF0aD0idXJsKCNjbGlwMF81MjJfMTcwKSI+CiAgICA8cGF0aCBkPSJNMjQuNjUxOCAyMy45MzI0SDU0LjMwNzhMNTIuNjgwOCAwSDBWODcuNjk0MUgyNC42NTE4VjU5LjM5NjlINDguODEwNVYzNS40NjQ1SDI0LjY1MThWMjMuOTMyNFoiIHN0eWxlPSJmaWxsOiByZ2IoMCwgMCwgMCk7Ii8+CiAgICA8cGF0aCBkPSJNMTM2LjYyIDQzLjk3MUMxMzYuNjIgMjAuMjg2NyAxMTcuOTM0IDEuMjM5OTkgOTQuODg0NiAxLjIzOTk5QzcxLjgzNTIgMS4yMzk5OSA1My4yNzI1IDIwLjI4NjcgNTMuMjcyNSA0My45NzFDNTMuMjcyNSA2Ny42NTU0IDcxLjk1ODUgODYuNzAyMSA5NC44ODQ2IDg2LjcwMjFDMTE3LjgxMSA4Ni43MDIxIDEzNi42MiA2Ny42NTU0IDEzNi42MiA0My45NzFaTTEwMi41MDIgNjEuNTA0OUMxMDIuNTAyIDY1Ljc3MDYgOTkuMzk1OSA2OC44OTU0IDk1LjI3OTEgNjguODk1NEM5MS4xNjIyIDY4Ljg5NTQgODcuOTMyOCA2NS43NzA2IDg3LjkzMjggNjEuNTA0OVYyNi40MTI0Qzg3LjkzMjggMjIuMTQ2NyA5MS4wMzkgMTkuMDIxOSA5NS4xNTU4IDE5LjAyMTlDOTkuMjcyNyAxOS4wMjE5IDEwMi41MDIgMjIuMTQ2NyAxMDIuNTAyIDI2LjQxMjRWNjEuNTA0OVoiIHN0eWxlPSJmaWxsOiByZ2IoMCwgMCwgMCk7Ii8+CiAgICA8cGF0aCBkPSJNMjAwLjUxNyAwSDE3My40OTlMMTYzLjAyMiAxOS4wNDY3TDE1Mi45NCAwSDEyNC45MTFMMTQ5LjQ2NCA0Mi40ODNMMTIzLjU1NSA4Ny42OTQxSDE1MC42OTZMMTYyLjc3NiA2NS41MjI2TDE3NC44NTUgODcuNjk0MUgyMDIuNzYxTDE3Ni40ODIgNDIuMjEwMkwyMDAuNTE3IDBaIiBzdHlsZT0iZmlsbDogcmdiKDAsIDAsIDApOyIvPgogICAgPHBhdGggZD0iTTM1MC4xMDQgMEgyNDQuOTg5QzIxOC40NjQgMCAxOTkuMjg1IDE4LjQyNjcgMTk5LjI4NSA0My44NDcxQzE5OS4yODUgNjkuMjY3NSAyMTguNDY0IDg3LjY5NDEgMjQ0Ljk4OSA4Ny42OTQxSDM1MC4xMDRDMzc2LjYzIDg3LjY5NDEgMzk1LjgwOSA2OS4yNjc1IDM5NS44MDkgNDMuODQ3MUMzOTUuODA5IDE4LjQyNjcgMzc2LjYzIDAgMzUwLjEwNCAwWk0yNDYuNDkzIDcxLjU0OTFDMjMxLjE4NCA3MS41NDkxIDIyMi4yMTEgNjAuNjM2OSAyMjIuMjExIDQzLjk3MTFDMjIyLjIxMSAyNy4zMDUyIDIzMS4zMDcgMTYuMTQ1IDI0Ni40OTMgMTYuMTQ1QzI2MS42NzggMTYuMTQ1IDI3MC43NzUgMjcuMDU3MiAyNzAuNzc1IDQzLjk3MTFDMjcwLjc3NSA2MC44ODQ5IDI2MS44MDIgNzEuNTQ5MSAyNDYuNDkzIDcxLjU0OTFaTTMyMi4zNDYgNzAuOTA0M0gzMDguODg3TDI5MC4yIDM5LjA4NTRIMjg5LjgzMVY3MC45MDQzSDI3Ny41MDVWMTYuNzY1MUgyOTAuOTY1TDMwOS42NTEgNDguMzM1OUgzMTAuMDJWMTYuNzY1MUgzMjIuMzQ2VjcwLjkwNDNaTTM2Ny4zMTEgNzAuOTA0M0gzMzEuNTY2VjE2Ljc2NTFIMzY2LjY5NUwzNjcuOTUyIDI3LjkyNTJIMzQ0LjQxVjM4LjA2ODZIMzY1LjQ2MlY0OS4yMjg4SDM0NC40MVY1OS43NDQxSDM2OC41NjhMMzY3LjMxMSA3MC45MDQzWiIgc3R5bGU9ImZpbGw6IHJnYigwLCAwLCAwKTsiLz4KICAgIDxwYXRoIGQ9Ik0yNDYuNDkzIDI3LjY3NzJDMjQwLjM3OSAyNy42NzcyIDIzNy4wMjcgMzIuMDY2OSAyMzcuMDI3IDQwLjIwMTRWNDcuNDY3OUMyMzcuMDI3IDU1LjYwMjUgMjQwLjM3OSA1OS45OTIxIDI0Ni40OTMgNTkuOTkyMUMyNTIuNjA3IDU5Ljk5MjEgMjU1Ljk1OSA1NS42MDI1IDI1NS45NTkgNDcuNDY3OVY0MC4yMDE0QzI1NS45NTkgMzIuMDY2OSAyNTIuNjA3IDI3LjY3NzIgMjQ2LjQ5MyAyNy42NzcyWiIgc3R5bGU9ImZpbGw6IHJnYigwLCAwLCAwKTsiLz4KICA8L2c+CiAgPGRlZnM+CiAgICA8Y2xpcFBhdGggaWQ9ImNsaXAwXzUyMl8xNzAiPgogICAgICA8cmVjdCB3aWR0aD0iMzk1LjgwOSIgaGVpZ2h0PSI4Ny42OTQxIiBmaWxsPSJ3aGl0ZSIvPgogICAgPC9jbGlwUGF0aD4KICA8L2RlZnM+Cjwvc3ZnPg==" width="56"></span><br><span>Continue to recommend content optimizations that match search intent: keyword, SERP, and competitive analysis to target the phrases we want to rank for in traditional and AI search, then shaping content to match informational, transactional, or commercial intent. That is writing for the user, not for AI systems.</span></p>
+</article>
+<article class="contradiction-card">
+<h3 class="contradiction-title" data-edit-format="plain" data-edit-id="txt_contra_publishers_ai_agents_title" data-edit-label="Contradiction title: publishers ai agents" data-max-length="120" data-required="true">Whether publishers need to prepare for AI agents</h3>
+<div class="stance-grid">
+<p class="stance stance-col--google" data-edit-format="markdown-block" data-edit-id="md_stance_publishers_ai_agents_google" data-edit-label="Stance: publishers ai agents (google)" data-max-length="600" data-required="true"><span class="stance-label">Google guide, May 15</span><br><span class="stance-label stance-label--logo stance-label--google"><img alt="Google" height="16" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNzIgOTIiIHdpZHRoPSIyNzIiIGhlaWdodD0iOTIiPgogICAgPHBhdGggZmlsbD0iI0VBNDMzNSIgZD0iTTExNS43NSA0Ny4xOGMwIDEyLjc3LTkuOTkgMjIuMTgtMjIuMjUgMjIuMThzLTIyLjI1LTkuNDEtMjIuMjUtMjIuMThDNzEuMjUgMzQuMzIgODEuMjQgMjUgOTMuNSAyNXMyMi4yNSA5LjMyIDIyLjI1IDIyLjE4em0tOS43NCAwYzAtNy45OC01Ljc5LTEzLjQ0LTEyLjUxLTEzLjQ0UzgwLjk5IDM5LjIgODAuOTkgNDcuMThjMCA3LjkgNS43OSAxMy40NCAxMi41MSAxMy40NHMxMi41MS01LjU1IDEyLjUxLTEzLjQ0eiIvPgogICAgPHBhdGggZmlsbD0iI0ZCQkMwNSIgZD0iTTE2My43NSA0Ny4xOGMwIDEyLjc3LTkuOTkgMjIuMTgtMjIuMjUgMjIuMThzLTIyLjI1LTkuNDEtMjIuMjUtMjIuMThjMC0xMi44NSA5Ljk5LTIyLjE4IDIyLjI1LTIyLjE4czIyLjI1IDkuMzIgMjIuMjUgMjIuMTh6bS05Ljc0IDBjMC03Ljk4LTUuNzktMTMuNDQtMTIuNTEtMTMuNDRzLTEyLjUxIDUuNDYtMTIuNTEgMTMuNDRjMCA3LjkgNS43OSAxMy40NCAxMi41MSAxMy40NHMxMi41MS01LjU1IDEyLjUxLTEzLjQ0eiIvPgogICAgPHBhdGggZmlsbD0iIzQyODVGNCIgZD0iTTIwOS43NSAyNi4zNHYzOS44MmMwIDE2LjM4LTkuNjYgMjMuMDctMjEuMDggMjMuMDctMTAuNzUgMC0xNy4yMi03LjE5LTE5LjY2LTEzLjA3bDguNDgtMy41M2MxLjUxIDMuNjEgNS4yMSA3Ljg3IDExLjE3IDcuODcgNy4zMSAwIDExLjg0LTQuNTEgMTEuODQtMTN2LTMuMTloLS4zNGMtMi4xOCAyLjY5LTYuMzggNS4wNC0xMS42OCA1LjA0LTExLjA5IDAtMjEuMjUtOS42Ni0yMS4yNS0yMi4wOSAwLTEyLjUyIDEwLjE2LTIyLjI2IDIxLjI1LTIyLjI2IDUuMjkgMCA5LjQ5IDIuMzUgMTEuNjggNC45NmguMzR2LTMuNjFoOS4yNXptLTguNTYgMjAuOTJjMC03LjgxLTUuMjEtMTMuNTItMTEuODQtMTMuNTItNi43MiAwLTEyLjM1IDUuNzEtMTIuMzUgMTMuNTIgMCA3LjczIDUuNjMgMTMuMzYgMTIuMzUgMTMuMzYgNi42MyAwIDExLjg0LTUuNjMgMTEuODQtMTMuMzZ6Ii8+CiAgICA8cGF0aCBmaWxsPSIjMzRBODUzIiBkPSJNMjI1IDN2NjVoLTkuNVYzaDkuNXoiLz4KICAgIDxwYXRoIGZpbGw9IiNFQTQzMzUiIGQ9Ik0yNjIuMDIgNTQuNDhsNy41NiA1LjA0Yy0yLjQ0IDMuNjEtOC4zMiA5LjgzLTE4LjQ4IDkuODMtMTIuNiAwLTIyLjAxLTkuNzQtMjIuMDEtMjIuMTggMC0xMy4xOSA5LjQ5LTIyLjE4IDIwLjkyLTIyLjE4IDExLjUxIDAgMTcuMTQgOS4xNiAxOC45OCAxNC4xMWwxLjAxIDIuNTItMjkuNjUgMTIuMjhjMi4yNyA0LjQ1IDUuOCA2LjcyIDEwLjc1IDYuNzIgNC45NiAwIDguNC0yLjQ0IDEwLjkyLTYuMTR6bS0yMy4yNy03Ljk4bDE5LjgyLTguMjNjLTEuMDktMi43Ny00LjM3LTQuNy04LjIzLTQuNy00Ljk1IDAtMTEuODQgNC4zNy0xMS41OSAxMi45M3oiLz4KICAgIDxwYXRoIGZpbGw9IiM0Mjg1RjQiIGQ9Ik0zNS4yOSA0MS40MVYzMkg2N2MuMzEgMS42NC40NyAzLjU4LjQ3IDUuNjggMCA3LjA2LTEuOTMgMTUuNzktOC4xNSAyMi4wMS02LjA1IDYuMy0xMy43OCA5LjY2LTI0LjAyIDkuNjZDMTYuMzIgNjkuMzUuMzYgNTMuODkuMzYgMzQuOTEuMzYgMTUuOTMgMTYuMzIuNDcgMzUuMy40N2MxMC41IDAgMTcuOTggNC4xMiAyMy42IDkuNDlsLTYuNjQgNi42NGMtNC4wMy0zLjc4LTkuNDktNi43Mi0xNi45Ny02LjcyLTEzLjg2IDAtMjQuNyAxMS4xNy0yNC43IDI1LjAzIDAgMTMuODYgMTAuODQgMjUuMDMgMjQuNyAyNS4wMyA4Ljk5IDAgMTQuMTEtMy42MSAxNy4zOS02Ljg5IDIuNjYtMi42NiA0LjQxLTYuNDYgNS4xLTExLjY1bC0yMi40OS4wMXoiLz4KPC9zdmc+Cg==" width="58"></span><br><span>No specific advice on AI agents or agentic surfaces. Foundational SEO covers it.</span></p>
+<p class="stance stance-col--google-io" data-edit-format="markdown-block" data-edit-id="md_stance_publishers_ai_agents_google_io" data-edit-label="Stance: publishers ai agents (google_io)" data-max-length="600" data-required="true"><span class="stance-label">Google I/O 2026 and Chrome Lighthouse</span><br><span class="stance-label stance-label--logo stance-label--google"><img alt="Google" height="16" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNzIgOTIiIHdpZHRoPSIyNzIiIGhlaWdodD0iOTIiPgogICAgPHBhdGggZmlsbD0iI0VBNDMzNSIgZD0iTTExNS43NSA0Ny4xOGMwIDEyLjc3LTkuOTkgMjIuMTgtMjIuMjUgMjIuMThzLTIyLjI1LTkuNDEtMjIuMjUtMjIuMThDNzEuMjUgMzQuMzIgODEuMjQgMjUgOTMuNSAyNXMyMi4yNSA5LjMyIDIyLjI1IDIyLjE4em0tOS43NCAwYzAtNy45OC01Ljc5LTEzLjQ0LTEyLjUxLTEzLjQ0UzgwLjk5IDM5LjIgODAuOTkgNDcuMThjMCA3LjkgNS43OSAxMy40NCAxMi41MSAxMy40NHMxMi41MS01LjU1IDEyLjUxLTEzLjQ0eiIvPgogICAgPHBhdGggZmlsbD0iI0ZCQkMwNSIgZD0iTTE2My43NSA0Ny4xOGMwIDEyLjc3LTkuOTkgMjIuMTgtMjIuMjUgMjIuMThzLTIyLjI1LTkuNDEtMjIuMjUtMjIuMThjMC0xMi44NSA5Ljk5LTIyLjE4IDIyLjI1LTIyLjE4czIyLjI1IDkuMzIgMjIuMjUgMjIuMTh6bS05Ljc0IDBjMC03Ljk4LTUuNzktMTMuNDQtMTIuNTEtMTMuNDRzLTEyLjUxIDUuNDYtMTIuNTEgMTMuNDRjMCA3LjkgNS43OSAxMy40NCAxMi41MSAxMy40NHMxMi41MS01LjU1IDEyLjUxLTEzLjQ0eiIvPgogICAgPHBhdGggZmlsbD0iIzQyODVGNCIgZD0iTTIwOS43NSAyNi4zNHYzOS44MmMwIDE2LjM4LTkuNjYgMjMuMDctMjEuMDggMjMuMDctMTAuNzUgMC0xNy4yMi03LjE5LTE5LjY2LTEzLjA3bDguNDgtMy41M2MxLjUxIDMuNjEgNS4yMSA3Ljg3IDExLjE3IDcuODcgNy4zMSAwIDExLjg0LTQuNTEgMTEuODQtMTN2LTMuMTloLS4zNGMtMi4xOCAyLjY5LTYuMzggNS4wNC0xMS42OCA1LjA0LTExLjA5IDAtMjEuMjUtOS42Ni0yMS4yNS0yMi4wOSAwLTEyLjUyIDEwLjE2LTIyLjI2IDIxLjI1LTIyLjI2IDUuMjkgMCA5LjQ5IDIuMzUgMTEuNjggNC45NmguMzR2LTMuNjFoOS4yNXptLTguNTYgMjAuOTJjMC03LjgxLTUuMjEtMTMuNTItMTEuODQtMTMuNTItNi43MiAwLTEyLjM1IDUuNzEtMTIuMzUgMTMuNTIgMCA3LjczIDUuNjMgMTMuMzYgMTIuMzUgMTMuMzYgNi42MyAwIDExLjg0LTUuNjMgMTEuODQtMTMuMzZ6Ii8+CiAgICA8cGF0aCBmaWxsPSIjMzRBODUzIiBkPSJNMjI1IDN2NjVoLTkuNVYzaDkuNXoiLz4KICAgIDxwYXRoIGZpbGw9IiNFQTQzMzUiIGQ9Ik0yNjIuMDIgNTQuNDhsNy41NiA1LjA0Yy0yLjQ0IDMuNjEtOC4zMiA5LjgzLTE4LjQ4IDkuODMtMTIuNiAwLTIyLjAxLTkuNzQtMjIuMDEtMjIuMTggMC0xMy4xOSA5LjQ5LTIyLjE4IDIwLjkyLTIyLjE4IDExLjUxIDAgMTcuMTQgOS4xNiAxOC45OCAxNC4xMWwxLjAxIDIuNTItMjkuNjUgMTIuMjhjMi4yNyA0LjQ1IDUuOCA2LjcyIDEwLjc1IDYuNzIgNC45NiAwIDguNC0yLjQ0IDEwLjkyLTYuMTR6bS0yMy4yNy03Ljk4bDE5LjgyLTguMjNjLTEuMDktMi43Ny00LjM3LTQuNy04LjIzLTQuNy00Ljk1IDAtMTEuODQgNC4zNy0xMS41OSAxMi45M3oiLz4KICAgIDxwYXRoIGZpbGw9IiM0Mjg1RjQiIGQ9Ik0zNS4yOSA0MS40MVYzMkg2N2MuMzEgMS42NC40NyAzLjU4LjQ3IDUuNjggMCA3LjA2LTEuOTMgMTUuNzktOC4xNSAyMi4wMS02LjA1IDYuMy0xMy43OCA5LjY2LTI0LjAyIDkuNjZDMTYuMzIgNjkuMzUuMzYgNTMuODkuMzYgMzQuOTEuMzYgMTUuOTMgMTYuMzIuNDcgMzUuMy40N2MxMC41IDAgMTcuOTggNC4xMiAyMy42IDkuNDlsLTYuNjQgNi42NGMtNC4wMy0zLjc4LTkuNDktNi43Mi0xNi45Ny02LjcyLTEzLjg2IDAtMjQuNyAxMS4xNy0yNC43IDI1LjAzIDAgMTMuODYgMTAuODQgMjUuMDMgMjQuNyAyNS4wMyA4Ljk5IDAgMTQuMTEtMy42MSAxNy4zOS02Ljg5IDIuNjYtMi42NiA0LjQxLTYuNDYgNS4xLTExLjY1bC0yMi40OS4wMXoiLz4KPC9zdmc+Cg==" width="58"></span><br><span>Search Agents will autonomously scan sports, finance, news, and social on users' behalf. Lighthouse now scores WebMCP, llms.txt, agent-centric accessibility, and CLS as agentic-readiness signals. None of these appear in the May 15 guide.</span></p>
+</div>
+<p class="stance stance--fox" data-edit-format="markdown-block" data-edit-id="md_stance_publishers_ai_agents_fox" data-edit-label="Stance: publishers ai agents (fox)" data-max-length="600" data-required="true"><span class="stance-label stance-label--logo stance-label--fox"><img alt="FOX One" height="13" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB3aWR0aD0iMzk2IiBoZWlnaHQ9Ijg4IiB2aWV3Qm94PSIwIDAgMzk2IDg4IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxnIGNsaXAtcGF0aD0idXJsKCNjbGlwMF81MjJfMTcwKSI+CiAgICA8cGF0aCBkPSJNMjQuNjUxOCAyMy45MzI0SDU0LjMwNzhMNTIuNjgwOCAwSDBWODcuNjk0MUgyNC42NTE4VjU5LjM5NjlINDguODEwNVYzNS40NjQ1SDI0LjY1MThWMjMuOTMyNFoiIHN0eWxlPSJmaWxsOiByZ2IoMCwgMCwgMCk7Ii8+CiAgICA8cGF0aCBkPSJNMTM2LjYyIDQzLjk3MUMxMzYuNjIgMjAuMjg2NyAxMTcuOTM0IDEuMjM5OTkgOTQuODg0NiAxLjIzOTk5QzcxLjgzNTIgMS4yMzk5OSA1My4yNzI1IDIwLjI4NjcgNTMuMjcyNSA0My45NzFDNTMuMjcyNSA2Ny42NTU0IDcxLjk1ODUgODYuNzAyMSA5NC44ODQ2IDg2LjcwMjFDMTE3LjgxMSA4Ni43MDIxIDEzNi42MiA2Ny42NTU0IDEzNi42MiA0My45NzFaTTEwMi41MDIgNjEuNTA0OUMxMDIuNTAyIDY1Ljc3MDYgOTkuMzk1OSA2OC44OTU0IDk1LjI3OTEgNjguODk1NEM5MS4xNjIyIDY4Ljg5NTQgODcuOTMyOCA2NS43NzA2IDg3LjkzMjggNjEuNTA0OVYyNi40MTI0Qzg3LjkzMjggMjIuMTQ2NyA5MS4wMzkgMTkuMDIxOSA5NS4xNTU4IDE5LjAyMTlDOTkuMjcyNyAxOS4wMjE5IDEwMi41MDIgMjIuMTQ2NyAxMDIuNTAyIDI2LjQxMjRWNjEuNTA0OVoiIHN0eWxlPSJmaWxsOiByZ2IoMCwgMCwgMCk7Ii8+CiAgICA8cGF0aCBkPSJNMjAwLjUxNyAwSDE3My40OTlMMTYzLjAyMiAxOS4wNDY3TDE1Mi45NCAwSDEyNC45MTFMMTQ5LjQ2NCA0Mi40ODNMMTIzLjU1NSA4Ny42OTQxSDE1MC42OTZMMTYyLjc3NiA2NS41MjI2TDE3NC44NTUgODcuNjk0MUgyMDIuNzYxTDE3Ni40ODIgNDIuMjEwMkwyMDAuNTE3IDBaIiBzdHlsZT0iZmlsbDogcmdiKDAsIDAsIDApOyIvPgogICAgPHBhdGggZD0iTTM1MC4xMDQgMEgyNDQuOTg5QzIxOC40NjQgMCAxOTkuMjg1IDE4LjQyNjcgMTk5LjI4NSA0My44NDcxQzE5OS4yODUgNjkuMjY3NSAyMTguNDY0IDg3LjY5NDEgMjQ0Ljk4OSA4Ny42OTQxSDM1MC4xMDRDMzc2LjYzIDg3LjY5NDEgMzk1LjgwOSA2OS4yNjc1IDM5NS44MDkgNDMuODQ3MUMzOTUuODA5IDE4LjQyNjcgMzc2LjYzIDAgMzUwLjEwNCAwWk0yNDYuNDkzIDcxLjU0OTFDMjMxLjE4NCA3MS41NDkxIDIyMi4yMTEgNjAuNjM2OSAyMjIuMjExIDQzLjk3MTFDMjIyLjIxMSAyNy4zMDUyIDIzMS4zMDcgMTYuMTQ1IDI0Ni40OTMgMTYuMTQ1QzI2MS42NzggMTYuMTQ1IDI3MC43NzUgMjcuMDU3MiAyNzAuNzc1IDQzLjk3MTFDMjcwLjc3NSA2MC44ODQ5IDI2MS44MDIgNzEuNTQ5MSAyNDYuNDkzIDcxLjU0OTFaTTMyMi4zNDYgNzAuOTA0M0gzMDguODg3TDI5MC4yIDM5LjA4NTRIMjg5LjgzMVY3MC45MDQzSDI3Ny41MDVWMTYuNzY1MUgyOTAuOTY1TDMwOS42NTEgNDguMzM1OUgzMTAuMDJWMTYuNzY1MUgzMjIuMzQ2VjcwLjkwNDNaTTM2Ny4zMTEgNzAuOTA0M0gzMzEuNTY2VjE2Ljc2NTFIMzY2LjY5NUwzNjcuOTUyIDI3LjkyNTJIMzQ0LjQxVjM4LjA2ODZIMzY1LjQ2MlY0OS4yMjg4SDM0NC40MVY1OS43NDQxSDM2OC41NjhMMzY3LjMxMSA3MC45MDQzWiIgc3R5bGU9ImZpbGw6IHJnYigwLCAwLCAwKTsiLz4KICAgIDxwYXRoIGQ9Ik0yNDYuNDkzIDI3LjY3NzJDMjQwLjM3OSAyNy42NzcyIDIzNy4wMjcgMzIuMDY2OSAyMzcuMDI3IDQwLjIwMTRWNDcuNDY3OUMyMzcuMDI3IDU1LjYwMjUgMjQwLjM3OSA1OS45OTIxIDI0Ni40OTMgNTkuOTkyMUMyNTIuNjA3IDU5Ljk5MjEgMjU1Ljk1OSA1NS42MDI1IDI1NS45NTkgNDcuNDY3OVY0MC4yMDE0QzI1NS45NTkgMzIuMDY2OSAyNTIuNjA3IDI3LjY3NzIgMjQ2LjQ5MyAyNy42NzcyWiIgc3R5bGU9ImZpbGw6IHJnYigwLCAwLCAwKTsiLz4KICA8L2c+CiAgPGRlZnM+CiAgICA8Y2xpcFBhdGggaWQ9ImNsaXAwXzUyMl8xNzAiPgogICAgICA8cmVjdCB3aWR0aD0iMzk1LjgwOSIgaGVpZ2h0PSI4Ny42OTQxIiBmaWxsPSJ3aGl0ZSIvPgogICAgPC9jbGlwUGF0aD4KICA8L2RlZnM+Cjwvc3ZnPg==" width="56"></span><br><span>Set the May 15 AI search optimization guide as the floor (table stakes for any AI surface) and Google's product and tooling output as the operational ceiling. Schema, schedule pipeline, and canonical work already advance toward that ceiling. Extend the compliance tool in the next cycle with agent-readiness checks for llms.txt and accessibility tree integrity.</span></p>
+</article>
+</section>
+</div>
+
+
+
+<script>(function(){
+  try {
+    if (window.top === window.self) return;
+    var lastSent = -1;
+    var pending = false;
+    function send() {
+      pending = false;
+      var doc = document.scrollingElement || document.documentElement || document.body;
+      if (!doc) return;
+      var top = (window.pageYOffset || doc.scrollTop || 0);
+      if (top === lastSent) return;
+      lastSent = top;
+      try {
+        window.parent.postMessage({
+          type: 'report-scroll',
+          scrollTop: top,
+          atTop: top <= 2
+        }, '*');
+      } catch (e) {}
+    }
+    function schedule() {
+      if (pending) return;
+      pending = true;
+      (window.requestAnimationFrame || function(cb){ setTimeout(cb, 16); })(send);
+    }
+    window.addEventListener('scroll', schedule, { passive: true });
+    document.addEventListener('scroll', schedule, { passive: true, capture: true });
+    window.addEventListener('load', send);
+    send();
+  } catch (e) {}
+})();</script>
+</body></html>
